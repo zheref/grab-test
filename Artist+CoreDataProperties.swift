@@ -16,6 +16,6 @@ extension Artist {
 
     @NSManaged var name: String?
     @NSManaged var link: String?
-    @NSManaged var apps: App?
+    @NSManaged var apps: NSOrderedSet?
 
 }

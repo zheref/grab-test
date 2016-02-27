@@ -22,8 +22,8 @@ extension App {
     @NSManaged var rights: String?
     @NSManaged var summary: String?
     @NSManaged var releaseDate: NSDate?
-    @NSManaged var images: NSManagedObject?
-    @NSManaged var artist: NSManagedObject?
-    @NSManaged var category: NSManagedObject?
+    @NSManaged var images: NSOrderedSet?
+    @NSManaged var artist: Artist?
+    @NSManaged var category: Category?
 
 }

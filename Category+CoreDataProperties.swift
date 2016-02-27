@@ -17,6 +17,6 @@ extension Category {
     @NSManaged var label: String?
     @NSManaged var id: String?
     @NSManaged var link: String?
-    @NSManaged var apps: App?
+    @NSManaged var apps: NSOrderedSet?
 
 }
