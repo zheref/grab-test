@@ -99,13 +99,17 @@
 		2B18E5971C7CB3C200449B15 /* Grability */ = {
 			isa = PBXGroup;
 			children = (
-				2B18E5981C7CB3C200449B15 /* AppDelegate.swift */,
-				2B18E59A1C7CB3C200449B15 /* ViewController.swift */,
-				2B18E59C1C7CB3C200449B15 /* Main.storyboard */,
+				2B46B40F1C8223B0007F1F3E /* General */,
+				2B46B4101C82248B007F1F3E /* Views */,
+				2B46B40A1C822032007F1F3E /* Controllers */,
+				2B46B40D1C82219C007F1F3E /* Datasources */,
+				2B46B4091C821FC8007F1F3E /* Delegates */,
+				2B46B40B1C8220C5007F1F3E /* Cells */,
+				2B46B4111C8224E9007F1F3E /* Datastore */,
+				2B46B40C1C8220CC007F1F3E /* Clients */,
+				2B46B4081C821FC1007F1F3E /* Models */,
+				2B46B40E1C8222AF007F1F3E /* Protocols */,
 				2B18E5A21C7CB3C200449B15 /* Assets.xcassets */,
-				2B18E5A41C7CB3C200449B15 /* LaunchScreen.storyboard */,
-				2B18E5A71C7CB3C200449B15 /* Info.plist */,
-				2B18E59F1C7CB3C200449B15 /* Grability.xcdatamodeld */,
 			);
 			path = Grability;
 			sourceTree = "<group>";
@@ -126,6 +130,82 @@
 				2B18E5BD1C7CB3C200449B15 /* Info.plist */,
 			);
 			path = GrabilityUITests;
+			sourceTree = "<group>";
+		};
+		2B46B4081C821FC1007F1F3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2B46B4091C821FC8007F1F3E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		2B46B40A1C822032007F1F3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B18E59A1C7CB3C200449B15 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2B46B40B1C8220C5007F1F3E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		2B46B40C1C8220CC007F1F3E /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		2B46B40D1C82219C007F1F3E /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Datasources;
+			sourceTree = "<group>";
+		};
+		2B46B40E1C8222AF007F1F3E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		2B46B40F1C8223B0007F1F3E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				2B18E5981C7CB3C200449B15 /* AppDelegate.swift */,
+				2B18E5A71C7CB3C200449B15 /* Info.plist */,
+				2B18E59F1C7CB3C200449B15 /* Grability.xcdatamodeld */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		2B46B4101C82248B007F1F3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B18E5A41C7CB3C200449B15 /* LaunchScreen.storyboard */,
+				2B18E59C1C7CB3C200449B15 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2B46B4111C8224E9007F1F3E /* Datastore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Datastore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +276,7 @@
 				TargetAttributes = {
 					2B18E5941C7CB3C200449B15 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = AQUE4FE98B;
 					};
 					2B18E5AB1C7CB3C200449B15 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -403,10 +484,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Grability/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.zheref.Grability;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -414,10 +498,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Grability/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.zheref.Grability;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -488,6 +575,7 @@
 				2B18E5C21C7CB3C200449B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B18E5C31C7CB3C200449B15 /* Build configuration list for PBXNativeTarget "GrabilityTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +584,7 @@
 				2B18E5C51C7CB3C200449B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B18E5C61C7CB3C200449B15 /* Build configuration list for PBXNativeTarget "GrabilityUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +593,7 @@
 				2B18E5C81C7CB3C200449B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
