@@ -16,6 +16,14 @@
 		2B18E5B11C7CB3C200449B15 /* GrabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18E5B01C7CB3C200449B15 /* GrabilityTests.swift */; };
 		2B18E5BC1C7CB3C200449B15 /* GrabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18E5BB1C7CB3C200449B15 /* GrabilityUITests.swift */; };
 		2B46B4131C822826007F1F3E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B46B4121C822826007F1F3E /* CoreData.framework */; };
+		2B46B41D1C823218007F1F3E /* App+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4151C823218007F1F3E /* App+CoreDataProperties.swift */; };
+		2B46B41E1C823218007F1F3E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4161C823218007F1F3E /* App.swift */; };
+		2B46B41F1C823218007F1F3E /* Artist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4171C823218007F1F3E /* Artist+CoreDataProperties.swift */; };
+		2B46B4201C823218007F1F3E /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4181C823218007F1F3E /* Artist.swift */; };
+		2B46B4211C823218007F1F3E /* AppImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4191C823218007F1F3E /* AppImage+CoreDataProperties.swift */; };
+		2B46B4221C823218007F1F3E /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B41A1C823218007F1F3E /* AppImage.swift */; };
+		2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B41B1C823218007F1F3E /* Category+CoreDataProperties.swift */; };
+		2B46B4241C823218007F1F3E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B41C1C823218007F1F3E /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		2B18E5BB1C7CB3C200449B15 /* GrabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabilityUITests.swift; sourceTree = "<group>"; };
 		2B18E5BD1C7CB3C200449B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B46B4121C822826007F1F3E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2B46B4151C823218007F1F3E /* App+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "App+CoreDataProperties.swift"; path = "../App+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2B46B4161C823218007F1F3E /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = App.swift; path = ../App.swift; sourceTree = "<group>"; };
+		2B46B4171C823218007F1F3E /* Artist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Artist+CoreDataProperties.swift"; path = "../Artist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2B46B4181C823218007F1F3E /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artist.swift; path = ../Artist.swift; sourceTree = "<group>"; };
+		2B46B4191C823218007F1F3E /* AppImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AppImage+CoreDataProperties.swift"; path = "../AppImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2B46B41A1C823218007F1F3E /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppImage.swift; path = ../AppImage.swift; sourceTree = "<group>"; };
+		2B46B41B1C823218007F1F3E /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2B46B41C1C823218007F1F3E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +155,14 @@
 		2B46B4081C821FC1007F1F3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B46B4151C823218007F1F3E /* App+CoreDataProperties.swift */,
+				2B46B4161C823218007F1F3E /* App.swift */,
+				2B46B4171C823218007F1F3E /* Artist+CoreDataProperties.swift */,
+				2B46B4181C823218007F1F3E /* Artist.swift */,
+				2B46B4191C823218007F1F3E /* AppImage+CoreDataProperties.swift */,
+				2B46B41A1C823218007F1F3E /* AppImage.swift */,
+				2B46B41B1C823218007F1F3E /* Category+CoreDataProperties.swift */,
+				2B46B41C1C823218007F1F3E /* Category.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -354,8 +378,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B18E59B1C7CB3C200449B15 /* ViewController.swift in Sources */,
+				2B46B4211C823218007F1F3E /* AppImage+CoreDataProperties.swift in Sources */,
 				2B18E5991C7CB3C200449B15 /* AppDelegate.swift in Sources */,
+				2B46B41F1C823218007F1F3E /* Artist+CoreDataProperties.swift in Sources */,
 				2B18E5A11C7CB3C200449B15 /* Grability.xcdatamodeld in Sources */,
+				2B46B41E1C823218007F1F3E /* App.swift in Sources */,
+				2B46B41D1C823218007F1F3E /* App+CoreDataProperties.swift in Sources */,
+				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
+				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
+				2B46B4221C823218007F1F3E /* AppImage.swift in Sources */,
+				2B46B4241C823218007F1F3E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

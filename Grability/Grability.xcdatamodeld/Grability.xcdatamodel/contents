@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Automatic">
-    <entity name="App" syncable="YES">
+    <entity name="App" representedClassName=".App" syncable="YES">
         <attribute name="bundleId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,17 +13,17 @@
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="apps" inverseEntity="Category" syncable="YES"/>
         <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppImage" inverseName="app" inverseEntity="AppImage" syncable="YES"/>
     </entity>
-    <entity name="AppImage" syncable="YES">
+    <entity name="AppImage" representedClassName=".AppImage" syncable="YES">
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="app" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="App" inverseName="images" inverseEntity="App" syncable="YES"/>
     </entity>
-    <entity name="Artist" syncable="YES">
+    <entity name="Artist" representedClassName=".Artist" syncable="YES">
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="apps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="App" inverseName="artist" inverseEntity="App" syncable="YES"/>
     </entity>
-    <entity name="Category" syncable="YES">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
