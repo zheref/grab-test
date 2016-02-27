@@ -82,7 +82,6 @@
 		2B18E58C1C7CB3C100449B15 = {
 			isa = PBXGroup;
 			children = (
-				2B46B4121C822826007F1F3E /* CoreData.framework */,
 				2B18E5971C7CB3C200449B15 /* Grability */,
 				2B18E5AF1C7CB3C200449B15 /* GrabilityTests */,
 				2B18E5BA1C7CB3C200449B15 /* GrabilityUITests */,
@@ -113,6 +112,7 @@
 				2B46B40C1C8220CC007F1F3E /* Clients */,
 				2B46B4081C821FC1007F1F3E /* Models */,
 				2B46B40E1C8222AF007F1F3E /* Protocols */,
+				2B46B4141C822BAE007F1F3E /* Frameworks */,
 				2B18E5A21C7CB3C200449B15 /* Assets.xcassets */,
 			);
 			path = Grability;
@@ -210,6 +210,15 @@
 			children = (
 			);
 			name = Datastore;
+			sourceTree = "<group>";
+		};
+		2B46B4141C822BAE007F1F3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B46B4121C822826007F1F3E /* CoreData.framework */,
+			);
+			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
