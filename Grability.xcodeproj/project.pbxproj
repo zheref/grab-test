@@ -15,6 +15,7 @@
 		2B18E5A61C7CB3C200449B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B18E5A41C7CB3C200449B15 /* LaunchScreen.storyboard */; };
 		2B18E5B11C7CB3C200449B15 /* GrabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18E5B01C7CB3C200449B15 /* GrabilityTests.swift */; };
 		2B18E5BC1C7CB3C200449B15 /* GrabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18E5BB1C7CB3C200449B15 /* GrabilityUITests.swift */; };
+		2B46B4131C822826007F1F3E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B46B4121C822826007F1F3E /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2B18E5B71C7CB3C200449B15 /* GrabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B18E5BB1C7CB3C200449B15 /* GrabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabilityUITests.swift; sourceTree = "<group>"; };
 		2B18E5BD1C7CB3C200449B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B46B4121C822826007F1F3E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B46B4131C822826007F1F3E /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		2B18E58C1C7CB3C100449B15 = {
 			isa = PBXGroup;
 			children = (
+				2B46B4121C822826007F1F3E /* CoreData.framework */,
 				2B18E5971C7CB3C200449B15 /* Grability */,
 				2B18E5AF1C7CB3C200449B15 /* GrabilityTests */,
 				2B18E5BA1C7CB3C200449B15 /* GrabilityUITests */,
