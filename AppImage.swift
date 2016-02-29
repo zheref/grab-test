@@ -13,5 +13,15 @@ import CoreData
 class AppImage: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    
+    internal static func fromArguments(size: Int, withUrl link: String, forApp app: App) ->
+    AppImage {
+        
+        let appImage = AppImage()
+        appImage.size = size
+        appImage.link = link
+        appImage.app = app
+        return appImage
+    }
 
 }

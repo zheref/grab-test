@@ -70,20 +70,23 @@ internal final class AppsNetworker : GrabilityNetworker {
      * Retrieves the specified amount of apps from top free
      */
     internal func retrieveTopFree(amount: Int, returner: AppsAsyncReturner,
-        thrower: ErrorAsyncThrower) {
+    thrower: ErrorAsyncThrower) {
+        print("Retrieving")
             
         let url: NSURL =
             GrabilityNetworker.buildUrl(AppsNetworker.topFreeApplicationsRoute, forFeeding: amount)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data, response, error) in
+            print("Server responded")
             
             if let err = error {
                 thrower(ErrorWrapper(error: err))
             } else {
                 do {
                     let parsedData: JSON = try JSONParser.parse(data!)
-                    returner(self.serializeJsonFeed(parsedData))
+                    let apps: [App] = try self.serializeJsonFeed(parsedData)
+                    returner(apps)
                 } catch {
                     thrower(ErrorWrapper(error: error))
                 }
@@ -105,10 +108,21 @@ internal final class AppsNetworker : GrabilityNetworker {
     /**
      * Serialize JSON dictionary of feeded data into Apps model managed objects
      */
-    private func serializeJsonFeed(jsonFeed: JSON) -> [App] {
-        print(jsonFeed.stringValue!)
+    private func serializeJsonFeed(jsonFeed: JSON) throws -> [App] {
+        let jsonFeedBase = jsonFeed["feed"]
+        let jsonEntries = jsonFeedBase!["entry"]
         
-        return [App]()
+        var apps: [App] = [App]()
+        var index: Int = 0
+        var jsonEntry: JSON? = jsonEntries![index]
+        
+        while (jsonEntry != nil) {
+            apps.append(App.fromJson(jsonEntry!))
+            index++
+            jsonEntry = jsonEntries![index]
+        }
+        
+        return apps
     }
     
 }

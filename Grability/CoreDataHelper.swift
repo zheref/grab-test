@@ -12,11 +12,11 @@ import CoreData
 /**
  * Class responsible of wrapping the commong access to a managed data store given the model
  **/
-public class CoreDataHelper {
+internal class CoreDataHelper {
     
     // CLASS MEMBERS ------------------------------------------------------------------------------
     
-    public static func getInstance() -> CoreDataHelper {
+    internal static func getInstance() -> CoreDataHelper {
         return CoreDataHelper(modelName: "Grability", datastoreFilename: "Grability.sqlite")
     }
     

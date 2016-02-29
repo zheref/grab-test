@@ -20,7 +20,7 @@ public class JSON
     
     subscript(index : Int) -> JSON? {
         if let item = parsedObject as? NSArray {
-            if index > item.count { return nil }
+            if index >= item.count { return nil }
             
             return JSON(parsedObject: item[index])
         }
@@ -36,7 +36,11 @@ public class JSON
         return nil
     }
     
-    var stringValue : String? { get { return parsedObject as? String } }
+    var stringValue : String? {
+        get {
+            return parsedObject as? String
+        }
+    }
     
     var intValue : Int? { get { return parsedObject as? Int } }
 }
