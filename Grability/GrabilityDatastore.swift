@@ -15,6 +15,11 @@ internal class GrabilityDatastore {
     
     // CONSTANTS ----------------------------------------------------------------------------------
     
+    init() {
+        let dataHelper = CoreDataHelper.getInstance()
+        let coordinator = dataHelper.persistentStoreCoordinator
+    }
+    
     // FUNCTIONS ----------------------------------------------------------------------------------
     
 }

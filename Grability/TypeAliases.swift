@@ -9,3 +9,5 @@
 import Foundation
 
 internal typealias AppsAsyncReturner = ([App]) -> ()
+
+internal typealias ErrorAsyncThrower = (NSError) -> ()

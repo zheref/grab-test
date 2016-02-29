@@ -11,35 +11,42 @@ import Foundation
 /**
  * Base class for every networker withing this application
  **/
-internal class AppsCoordinator {
+internal final class AppsCoordinator {
     
-    // COMPUTED -----------------------------------------------------------------------------------
+    // SINGLETON ----------------------------------------------------------------------------------
     
-    internal var isNetworkAvailable: Bool {
-        get {
-            let status = Reach().connectionStatus()
-            
-            switch status {
-            case .Unknown, .Offline:
-                print("Not connected")
-                return false
-            case .Online(.WWAN):
-                print("Connected via WWAN")
-                return true
-            case .Online(.WiFi):
-                print("Connected via WiFi")
-                return true
-            }
-        }
+    /**
+     * Unique AppsCoordinator singleton reference (lazy-loaded)
+     */
+    private static var _instance: AppsCoordinator = {
+        return AppsCoordinator()
+    }()
+    
+    /**
+     * Unique AppsCoordinator singleton accesor
+     */
+    internal static func getInstance() -> AppsCoordinator {
+        return AppsCoordinator._instance
+    }
+    
+    // INITIALIZERS -------------------------------------------------------------------------------
+    
+    /**
+     * Main initializer (made private for singleton encapsulation purposes)
+     */
+    private init() {
+        
     }
     
     // METHODS ------------------------------------------------------------------------------------
     
     internal func getTopFreeApps(amount: Int, returner: AppsAsyncReturner) {
-        if isNetworkAvailable {
+        // TODO: Respond to network connectivity changes
+        
+        if GrabilityNetworker.isNetworkAvailable {
             AppsNetworker.getInstance().retrieveTopFree(amount, returner: {
                 (apps: [App]) in
-                AppsDatastore.getInstance().updateTopFree(apps)
+                AppsDatastore.getInstance().updateTopFree(apps, beingSupervisedBy: LogSupervisor())
                 returner(apps)
             })
         } else {

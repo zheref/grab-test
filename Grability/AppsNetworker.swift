@@ -69,13 +69,18 @@ internal final class AppsNetworker : GrabilityNetworker {
     /**
      * Retrieves the specified amount of apps from top free
      */
-    internal func retrieveTopFree(amount: Int, returner: AppsAsyncReturner) {
+    internal func retrieveTopFree(amount: Int, returner: AppsAsyncReturner,
+        thrower: ErrorAsyncThrower) {
+            
         let url: NSURL =
             GrabilityNetworker.buildUrl(AppsNetworker.topFreeApplicationsRoute, forFeeding: amount)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data, response, error) in
             
+            if let err = error {
+                thrower(err)
+            }
         }
         
         task.resume()

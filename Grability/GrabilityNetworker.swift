@@ -45,6 +45,26 @@ internal class GrabilityNetworker {
      */
     private static let genreParamName: String = "genre"
     
+    // COMPUTED -----------------------------------------------------------------------------------
+    
+    internal static var isNetworkAvailable: Bool {
+        get {
+            let status = Reach().connectionStatus()
+            
+            switch status {
+            case .Unknown, .Offline:
+                print("Not connected")
+                return false
+            case .Online(.WWAN):
+                print("Connected via WWAN")
+                return true
+            case .Online(.WiFi):
+                print("Connected via WiFi")
+                return true
+            }
+        }
+    }
+    
     // FUNCTIONS ----------------------------------------------------------------------------------
     
     /**

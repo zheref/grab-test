@@ -9,15 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // LIFECYCLE ----------------------------------------------------------------------------------
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let dataHelper = CoreDataHelper.getInstance()
-        let coordinator = dataHelper.persistentStoreCoordinator
-        
-        AppsNetworker.getInstance().retrieveTopFree(20)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +22,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // FUNCTIONS ----------------------------------------------------------------------------------
+    
+    private func loadApps() {
+        AppsCoordinator.getInstance().getTopFreeApps(20, returner: {
+            (apps: [App]) in
+            
+        })
+    }
 
 }
 
