@@ -127,7 +127,7 @@
 				2B46B4091C821FC8007F1F3E /* Delegates */,
 				2B46B40B1C8220C5007F1F3E /* Cells */,
 				2B46B4111C8224E9007F1F3E /* Datastore */,
-				2B46B40C1C8220CC007F1F3E /* Clients */,
+				2B46B40C1C8220CC007F1F3E /* Networkers */,
 				2B46B4081C821FC1007F1F3E /* Models */,
 				2B46B40E1C8222AF007F1F3E /* Protocols */,
 				2B46B4141C822BAE007F1F3E /* Frameworks */,
@@ -191,11 +191,11 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		2B46B40C1C8220CC007F1F3E /* Clients */ = {
+		2B46B40C1C8220CC007F1F3E /* Networkers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Clients;
+			name = Networkers;
 			sourceTree = "<group>";
 		};
 		2B46B40D1C82219C007F1F3E /* Datasources */ = {
