@@ -13,5 +13,9 @@ import CoreData
 class App: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    
+    internal static func fromJson() {
+        
+    }
 
 }

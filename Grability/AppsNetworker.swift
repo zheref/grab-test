@@ -79,7 +79,14 @@ internal final class AppsNetworker : GrabilityNetworker {
             (data, response, error) in
             
             if let err = error {
-                thrower(err)
+                thrower(ErrorWrapper(error: err))
+            } else {
+                do {
+                    let parsedData: JSON = try JSONParser.parse(data!)
+                    returner(self.serializeJsonFeed(parsedData))
+                } catch {
+                    thrower(ErrorWrapper(error: error))
+                }
             }
         }
         
@@ -93,6 +100,15 @@ internal final class AppsNetworker : GrabilityNetworker {
      **/
     private func limitPart(limit: Int) -> String {
         return "limit=\(limit)"
+    }
+    
+    /**
+     * Serialize JSON dictionary of feeded data into Apps model managed objects
+     */
+    private func serializeJsonFeed(jsonFeed: JSON) -> [App] {
+        print(jsonFeed.stringValue!)
+        
+        return [App]()
     }
     
 }

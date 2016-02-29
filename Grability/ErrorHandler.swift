@@ -1,5 +1,5 @@
 //
-//  TypeAliases.swift
+//  ErrorHandler.swift
 //  Grability
 //
 //  Created by Sergio Daniel Leztark on 2/29/16.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-internal typealias AppsAsyncReturner = ([App]) -> ()
-
-internal typealias ErrorAsyncThrower = (ErrorWrapper) -> ()
+internal protocol ErrorHandler {
+    
+    func handle(error: ErrorWrapper, whileDoing doing: String)
+    
+}

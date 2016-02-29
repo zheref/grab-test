@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         AppsCoordinator.getInstance().getTopFreeApps(20, returner: {
             (apps: [App]) in
             
+        }, thrower: {
+            (error: ErrorWrapper) in
+            LogErrorHandler().handle(error, whileDoing: "Loading apps from ViewController")
         })
     }
 
