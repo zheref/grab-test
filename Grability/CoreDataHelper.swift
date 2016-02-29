@@ -14,25 +14,28 @@ import CoreData
  **/
 public class CoreDataHelper {
     
-    private let dataDirectory: NSURL = NSFileManager.defaultManager()
-        .URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last! as NSURL
+    // CLASS MEMBERS ------------------------------------------------------------------------------
+    
+    public static func getInstance() -> CoreDataHelper {
+        return CoreDataHelper(modelName: "Grability", datastoreFilename: "Grability.sqlite")
+    }
     
     // PROPERTIES ---------------------------------------------------------------------------------
 
     /**
-     *
+     * Name of the managed object model to manage
      **/
     private var modelName: String
     
     /**
-     *
+     * Name of the data store file name where to save the DB into the filesystem
      **/
     private var datastoreFilename: String
     
     /**
      * Managed object model instance to handle data operations (loaded lazily)
      **/
-    private lazy var managedObjectModel: NSManagedObjectModel = {
+    private lazy var _managedObjectModel: NSManagedObjectModel = {
         let modelURL = NSBundle.mainBundle().URLForResource("Grability", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
@@ -40,9 +43,9 @@ public class CoreDataHelper {
     /**
      * Middleware that handles the data-storage mechanism
      **/
-    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
+    private lazy var _persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         var coordinator: NSPersistentStoreCoordinator? =
-            NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+            NSPersistentStoreCoordinator(managedObjectModel: self._managedObjectModel)
         
         let documentsDirectory: NSURL = NSFileManager.defaultManager()
             .URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last! as NSURL
@@ -52,6 +55,8 @@ public class CoreDataHelper {
             NSMigratePersistentStoresAutomaticallyOption: true,
             NSInferMappingModelAutomaticallyOption: true
         ]
+        
+        print("DEBUG: path to data file \(url)")
         
         do {
             let persistentStore: NSPersistentStore? = try coordinator!
@@ -66,10 +71,17 @@ public class CoreDataHelper {
     }()
     
     /**
+     * Persistent Store Coordinator public read-only accesor
+     **/
+    public var persistentStoreCoordinator: NSPersistentStoreCoordinator? {
+        get { return _persistentStoreCoordinator }
+    }
+    
+    /**
      *
      **/
     private lazy var managedObjectContext: NSManagedObjectContext? = {
-        let coordinator = self.persistentStoreCoordinator
+        let coordinator = self._persistentStoreCoordinator
         
         if coordinator == nil {
             return nil
@@ -83,6 +95,8 @@ public class CoreDataHelper {
             return managedObjectContext
         }
     }()
+    
+    // INITIALIZERS -------------------------------------------------------------------------------
     
     /**
      * Common helper initializer
