@@ -69,7 +69,7 @@ internal final class AppsNetworker : GrabilityNetworker {
     /**
      * Retrieves the specified amount of apps from top free
      */
-    internal func retrieveTopFree(amount: Int) {
+    internal func retrieveTopFree(amount: Int, returner: AppsAsyncReturner) {
         let url: NSURL =
             GrabilityNetworker.buildUrl(AppsNetworker.topFreeApplicationsRoute, forFeeding: amount)
         

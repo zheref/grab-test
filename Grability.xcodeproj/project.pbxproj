@@ -27,6 +27,13 @@
 		2B46B4261C8234E4007F1F3E /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4251C8234E4007F1F3E /* CoreDataHelper.swift */; };
 		2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4271C83F10A007F1F3E /* AppsNetworker.swift */; };
 		2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B42A1C83F23C007F1F3E /* GrabilityNetworker.swift */; };
+		2B46B42E1C840E04007F1F3E /* AppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B42D1C840E04007F1F3E /* AppsCoordinator.swift */; };
+		2B46B4311C840EBD007F1F3E /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4301C840EBD007F1F3E /* TypeAliases.swift */; };
+		2B46B4341C841177007F1F3E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4331C841177007F1F3E /* Reachability.swift */; };
+		2B46B4361C841316007F1F3E /* AppsDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4351C841316007F1F3E /* AppsDatastore.swift */; };
+		2B46B4381C841343007F1F3E /* GrabilityDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4371C841343007F1F3E /* GrabilityDatastore.swift */; };
+		2B46B43A1C8415DF007F1F3E /* OperationSupervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4391C8415DF007F1F3E /* OperationSupervisor.swift */; };
+		2B46B43C1C841733007F1F3E /* LogSupervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B43B1C841733007F1F3E /* LogSupervisor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		2B46B4251C8234E4007F1F3E /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		2B46B4271C83F10A007F1F3E /* AppsNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsNetworker.swift; sourceTree = "<group>"; };
 		2B46B42A1C83F23C007F1F3E /* GrabilityNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabilityNetworker.swift; sourceTree = "<group>"; };
+		2B46B42D1C840E04007F1F3E /* AppsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCoordinator.swift; sourceTree = "<group>"; };
+		2B46B4301C840EBD007F1F3E /* TypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		2B46B4331C841177007F1F3E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		2B46B4351C841316007F1F3E /* AppsDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDatastore.swift; sourceTree = "<group>"; };
+		2B46B4371C841343007F1F3E /* GrabilityDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabilityDatastore.swift; sourceTree = "<group>"; };
+		2B46B4391C8415DF007F1F3E /* OperationSupervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationSupervisor.swift; sourceTree = "<group>"; };
+		2B46B43B1C841733007F1F3E /* LogSupervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogSupervisor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +144,12 @@
 				2B46B40D1C82219C007F1F3E /* Datasources */,
 				2B46B4091C821FC8007F1F3E /* Delegates */,
 				2B46B40B1C8220C5007F1F3E /* Cells */,
+				2B46B42C1C840DE4007F1F3E /* Coordinators */,
 				2B46B4111C8224E9007F1F3E /* Datastore */,
 				2B46B40C1C8220CC007F1F3E /* Networkers */,
 				2B46B4081C821FC1007F1F3E /* Models */,
 				2B46B40E1C8222AF007F1F3E /* Protocols */,
+				2B46B4321C841162007F1F3E /* Helpers */,
 				2B46B4141C822BAE007F1F3E /* Frameworks */,
 				2B18E5A21C7CB3C200449B15 /* Assets.xcassets */,
 			);
@@ -176,6 +192,7 @@
 		2B46B4091C821FC8007F1F3E /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				2B46B43B1C841733007F1F3E /* LogSupervisor.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -214,6 +231,7 @@
 		2B46B40E1C8222AF007F1F3E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				2B46B4391C8415DF007F1F3E /* OperationSupervisor.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -224,6 +242,7 @@
 				2B18E5981C7CB3C200449B15 /* AppDelegate.swift */,
 				2B18E5A71C7CB3C200449B15 /* Info.plist */,
 				2B18E59F1C7CB3C200449B15 /* Grability.xcdatamodeld */,
+				2B46B4301C840EBD007F1F3E /* TypeAliases.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -241,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				2B46B4251C8234E4007F1F3E /* CoreDataHelper.swift */,
+				2B46B4351C841316007F1F3E /* AppsDatastore.swift */,
+				2B46B4371C841343007F1F3E /* GrabilityDatastore.swift */,
 			);
 			name = Datastore;
 			sourceTree = "<group>";
@@ -252,6 +273,22 @@
 			);
 			name = Frameworks;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		2B46B42C1C840DE4007F1F3E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2B46B42D1C840E04007F1F3E /* AppsCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		2B46B4321C841162007F1F3E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2B46B4331C841177007F1F3E /* Reachability.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,11 +423,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B46B4311C840EBD007F1F3E /* TypeAliases.swift in Sources */,
+				2B46B4361C841316007F1F3E /* AppsDatastore.swift in Sources */,
 				2B18E59B1C7CB3C200449B15 /* ViewController.swift in Sources */,
+				2B46B43A1C8415DF007F1F3E /* OperationSupervisor.swift in Sources */,
 				2B46B4211C823218007F1F3E /* AppImage+CoreDataProperties.swift in Sources */,
+				2B46B42E1C840E04007F1F3E /* AppsCoordinator.swift in Sources */,
 				2B18E5991C7CB3C200449B15 /* AppDelegate.swift in Sources */,
 				2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */,
+				2B46B4341C841177007F1F3E /* Reachability.swift in Sources */,
 				2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */,
+				2B46B4381C841343007F1F3E /* GrabilityDatastore.swift in Sources */,
 				2B46B41F1C823218007F1F3E /* Artist+CoreDataProperties.swift in Sources */,
 				2B18E5A11C7CB3C200449B15 /* Grability.xcdatamodeld in Sources */,
 				2B46B41E1C823218007F1F3E /* App.swift in Sources */,
@@ -398,6 +441,7 @@
 				2B46B41D1C823218007F1F3E /* App+CoreDataProperties.swift in Sources */,
 				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
 				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
+				2B46B43C1C841733007F1F3E /* LogSupervisor.swift in Sources */,
 				2B46B4221C823218007F1F3E /* AppImage.swift in Sources */,
 				2B46B4241C823218007F1F3E /* Category.swift in Sources */,
 			);
