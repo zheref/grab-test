@@ -25,6 +25,8 @@
 		2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B41B1C823218007F1F3E /* Category+CoreDataProperties.swift */; };
 		2B46B4241C823218007F1F3E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B41C1C823218007F1F3E /* Category.swift */; };
 		2B46B4261C8234E4007F1F3E /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4251C8234E4007F1F3E /* CoreDataHelper.swift */; };
+		2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4271C83F10A007F1F3E /* AppsNetworker.swift */; };
+		2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B42A1C83F23C007F1F3E /* GrabilityNetworker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		2B46B41B1C823218007F1F3E /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2B46B41C1C823218007F1F3E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
 		2B46B4251C8234E4007F1F3E /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		2B46B4271C83F10A007F1F3E /* AppsNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsNetworker.swift; sourceTree = "<group>"; };
+		2B46B42A1C83F23C007F1F3E /* GrabilityNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabilityNetworker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,8 @@
 		2B46B40C1C8220CC007F1F3E /* Networkers */ = {
 			isa = PBXGroup;
 			children = (
+				2B46B4271C83F10A007F1F3E /* AppsNetworker.swift */,
+				2B46B42A1C83F23C007F1F3E /* GrabilityNetworker.swift */,
 			);
 			name = Networkers;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 				2B18E59B1C7CB3C200449B15 /* ViewController.swift in Sources */,
 				2B46B4211C823218007F1F3E /* AppImage+CoreDataProperties.swift in Sources */,
 				2B18E5991C7CB3C200449B15 /* AppDelegate.swift in Sources */,
+				2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */,
+				2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */,
 				2B46B41F1C823218007F1F3E /* Artist+CoreDataProperties.swift in Sources */,
 				2B18E5A11C7CB3C200449B15 /* Grability.xcdatamodeld in Sources */,
 				2B46B41E1C823218007F1F3E /* App.swift in Sources */,
