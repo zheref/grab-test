@@ -11,7 +11,7 @@ import Foundation
 /**
  * Class responsible of managing all the processes to read/write apps from the related REST API
  **/
-public final class AppsNetworker : GrabilityNetworker {
+internal final class AppsNetworker : GrabilityNetworker {
     
     // SINGLETON ----------------------------------------------------------------------------------
     
@@ -25,7 +25,7 @@ public final class AppsNetworker : GrabilityNetworker {
     /**
      * Unique AppsNetworker singleton accesor
      **/
-    public static func getInstance() -> AppsNetworker {
+    internal static func getInstance() -> AppsNetworker {
         return AppsNetworker._instance
     }
     
@@ -62,6 +62,23 @@ public final class AppsNetworker : GrabilityNetworker {
      **/
     private override init() {
         super.init()
+    }
+    
+    // METHODS ------------------------------------------------------------------------------------
+    
+    /**
+     * Retrieves the specified amount of apps from top free
+     */
+    internal func retrieveTopFree(amount: Int) {
+        let url: NSURL =
+            GrabilityNetworker.buildUrl(AppsNetworker.topFreeApplicationsRoute, forFeeding: amount)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
+            (data, response, error) in
+            
+        }
+        
+        task.resume()
     }
     
     // FUNCTIONS ----------------------------------------------------------------------------------

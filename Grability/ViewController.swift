@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         
         let dataHelper = CoreDataHelper.getInstance()
         let coordinator = dataHelper.persistentStoreCoordinator
+        
+        AppsNetworker.getInstance().retrieveTopFree(20)
     }
 
     override func didReceiveMemoryWarning() {
