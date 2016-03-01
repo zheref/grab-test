@@ -19,7 +19,7 @@ internal class App: NSManagedObject {
      * JSON representation from the API
      */
     internal static func fromJson(json: JSON) -> App {
-        let app = CoreDataHelper.getInstance().newEntity(App.modelName) as! App
+        let app = CoreDataHelper.shared.newEntity(App.modelName) as! App
         
         app.name = getLabelForKey("im:name", fromJson: json)
         app.summary = getLabelForKey("summary", fromJson: json)

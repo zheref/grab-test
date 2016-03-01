@@ -22,11 +22,8 @@ internal final class AppsNetworker : GrabilityNetworker {
         return AppsNetworker()
     }()
     
-    /**
-     * Unique AppsNetworker singleton accesor
-     **/
-    internal static func getInstance() -> AppsNetworker {
-        return AppsNetworker._instance
+    internal static var shared: AppsNetworker {
+        get { return AppsNetworker._instance }
     }
     
     // CONSTANTS ----------------------------------------------------------------------------------

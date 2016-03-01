@@ -40,19 +40,21 @@ internal final class AppsCoordinator {
     
     // METHODS ------------------------------------------------------------------------------------
     
+    /**
+     *
+     */
     internal func getTopFreeApps(amount: Int, returner: AppsAsyncReturner,
         thrower: ErrorAsyncThrower) {
             
         // TODO: Respond to network connectivity changes
-        
         if GrabilityNetworker.isNetworkAvailable {
-            AppsNetworker.getInstance().retrieveTopFree(amount, returner: {
+            AppsNetworker.shared.retrieveTopFree(amount, returner: {
                 (apps: [App]) in
-                AppsDatastore.getInstance().updateTopFree(apps, beingSupervisedBy: LogSupervisor())
+                AppsDatastore.shared.updateTopFree(apps, beingSupervisedBy: LogSupervisor())
                 returner(apps)
             }, thrower: thrower)
         } else {
-            AppsDatastore.getInstance().retrieveTopFree(amount, returner: returner)
+            AppsDatastore.shared.retrieveTopFree(amount, returner: returner)
         }
     }
     

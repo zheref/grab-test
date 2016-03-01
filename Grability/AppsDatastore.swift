@@ -26,8 +26,8 @@ internal final class AppsDatastore : GrabilityDatastore {
     /**
      * Unique AppsDatastore singleton accesor
      **/
-    internal static func getInstance() -> AppsDatastore {
-        return AppsDatastore._instance
+    internal static var shared: AppsDatastore {
+        get { return AppsDatastore._instance }
     }
     
     // CONSTANTS ----------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ internal final class AppsDatastore : GrabilityDatastore {
         let processName = "UPDATE_FREEAPPS_FROM_API_INTO_DB"
         clearTopFree(supervisor)
         supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Started)
-        CoreDataHelper.getInstance().saveContext()
+        CoreDataHelper.shared.saveContext()
         supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Finished)
     }
     
@@ -76,7 +76,7 @@ internal final class AppsDatastore : GrabilityDatastore {
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
             
             do {
-                try CoreDataHelper.getInstance().executeRequest(deleteRequest)
+                try CoreDataHelper.shared.executeRequest(deleteRequest)
                 supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Finished)
             } catch let error as NSError {
                 LogErrorHandler().handle(ErrorWrapper(ns: error))
@@ -88,15 +88,15 @@ internal final class AppsDatastore : GrabilityDatastore {
             // Fallback on earlier versions
             let fetchRequest = NSFetchRequest()
             fetchRequest.entity = NSEntityDescription.entityForName(App.modelName,
-                inManagedObjectContext: CoreDataHelper.getInstance().managedObjectContext!)
+                inManagedObjectContext: CoreDataHelper.shared.managedObjectContext!)
             fetchRequest.includesPropertyValues = false
             
             do {
-                let results: NSArray = try CoreDataHelper.getInstance().managedObjectContext!
+                let results: NSArray = try CoreDataHelper.shared.managedObjectContext!
                     .executeFetchRequest(fetchRequest)
                 
                 for item in results {
-                    CoreDataHelper.getInstance().managedObjectContext!
+                    CoreDataHelper.shared.managedObjectContext!
                         .deleteObject(item as! NSManagedObject)
                 }
                 

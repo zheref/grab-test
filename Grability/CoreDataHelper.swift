@@ -20,8 +20,8 @@ internal class CoreDataHelper {
         return CoreDataHelper(modelName: "Grability", datastoreFilename: "Grability.sqlite")
     }()
     
-    internal static func getInstance() -> CoreDataHelper {
-        return _instance
+    internal static var shared: CoreDataHelper {
+        get { return _instance }
     }
     
     // PROPERTIES ---------------------------------------------------------------------------------

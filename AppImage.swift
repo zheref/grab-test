@@ -21,7 +21,7 @@ class AppImage: NSManagedObject {
      */
     internal static func fromArguments(size: Int, withUrl link: String, forApp app: App? = nil) ->
     AppImage {
-        let appImage = CoreDataHelper.getInstance().newEntity(AppImage.modelName) as! AppImage
+        let appImage = CoreDataHelper.shared.newEntity(AppImage.modelName) as! AppImage
         
         appImage.size = size
         appImage.link = link
