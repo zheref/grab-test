@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 /**
  * Class responsible of managing all the processes to read/write apps from the related local DB
@@ -51,11 +52,61 @@ internal final class AppsDatastore : GrabilityDatastore {
         
     }
     
+    /**
+     *
+     */
     internal func updateTopFree(apps: [App], beingSupervisedBy supervisor: OperationSupervisor) {
         let processName = "UPDATE_FREEAPPS_FROM_API_INTO_DB"
-        
+        clearTopFree(supervisor)
         supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Started)
+        CoreDataHelper.getInstance().saveContext()
         supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Finished)
+    }
+    
+    /**
+     * Clear the table related with the Top Free Apps entity completely
+     */
+    private func clearTopFree(supervisor: OperationSupervisor) {
+        let processName = "CLEAR_TOPFREEAPPS_FROM_DB"
+        
+        if #available(iOS 9.0, *) {
+            supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Started)
+            
+            let fetchRequest = NSFetchRequest(entityName: App.modelName)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            
+            do {
+                try CoreDataHelper.getInstance().executeRequest(deleteRequest)
+                supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Finished)
+            } catch let error as NSError {
+                LogErrorHandler().handle(ErrorWrapper(ns: error))
+                supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Aborted)
+            }
+        } else {
+            supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Started)
+            
+            // Fallback on earlier versions
+            let fetchRequest = NSFetchRequest()
+            fetchRequest.entity = NSEntityDescription.entityForName(App.modelName,
+                inManagedObjectContext: CoreDataHelper.getInstance().managedObjectContext!)
+            fetchRequest.includesPropertyValues = false
+            
+            do {
+                let results: NSArray = try CoreDataHelper.getInstance().managedObjectContext!
+                    .executeFetchRequest(fetchRequest)
+                
+                for item in results {
+                    CoreDataHelper.getInstance().managedObjectContext!
+                        .deleteObject(item as! NSManagedObject)
+                }
+                
+                supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Finished)
+            } catch let error as NSError {
+                LogErrorHandler().handle(ErrorWrapper(ns: error))
+                supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Aborted)
+            }
+            
+        }
     }
     
     // FUNCTIONS ----------------------------------------------------------------------------------

@@ -71,14 +71,13 @@ internal final class AppsNetworker : GrabilityNetworker {
      */
     internal func retrieveTopFree(amount: Int, returner: AppsAsyncReturner,
     thrower: ErrorAsyncThrower) {
-        print("Retrieving")
-            
         let url: NSURL =
             GrabilityNetworker.buildUrl(AppsNetworker.topFreeApplicationsRoute, forFeeding: amount)
         
+        print("GET \(url.description)")
+        
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data, response, error) in
-            print("Server responded")
             
             if let err = error {
                 thrower(ErrorWrapper(error: err))

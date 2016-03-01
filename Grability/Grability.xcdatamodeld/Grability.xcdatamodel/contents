@@ -11,7 +11,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="apps" inverseEntity="Artist" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="apps" inverseEntity="Category" syncable="YES"/>
-        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppImage" inverseName="app" inverseEntity="AppImage" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" maxCount="3" deletionRule="Nullify" ordered="YES" destinationEntity="AppImage" inverseName="app" inverseEntity="AppImage" syncable="YES"/>
     </entity>
     <entity name="AppImage" representedClassName=".AppImage" syncable="YES">
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,18 +21,19 @@
     <entity name="Artist" representedClassName=".Artist" syncable="YES">
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="apps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="App" inverseName="artist" inverseEntity="App" syncable="YES"/>
+        <relationship name="apps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="App" inverseName="artist" inverseEntity="App" syncable="YES"/>
     </entity>
     <entity name="Category" representedClassName=".Category" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="apps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="App" inverseName="category" inverseEntity="App" syncable="YES"/>
+        <relationship name="apps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="App" inverseName="category" inverseEntity="App" syncable="YES"/>
     </entity>
+    <configuration name="Configuration"/>
     <elements>
         <element name="App" positionX="-254" positionY="-108" width="128" height="210"/>
-        <element name="Category" positionX="-54" positionY="0" width="128" height="105"/>
         <element name="AppImage" positionX="-135" positionY="-27" width="128" height="90"/>
-        <element name="Artist" positionX="-126" positionY="-9" width="128" height="90"/>
+        <element name="Artist" positionX="-126" positionY="-9" width="128" height="88"/>
+        <element name="Category" positionX="-54" positionY="0" width="128" height="103"/>
     </elements>
 </model>

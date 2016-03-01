@@ -16,8 +16,12 @@ internal class CoreDataHelper {
     
     // CLASS MEMBERS ------------------------------------------------------------------------------
     
-    internal static func getInstance() -> CoreDataHelper {
+    private static var _instance: CoreDataHelper = {
         return CoreDataHelper(modelName: "Grability", datastoreFilename: "Grability.sqlite")
+    }()
+    
+    internal static func getInstance() -> CoreDataHelper {
+        return _instance
     }
     
     // PROPERTIES ---------------------------------------------------------------------------------
@@ -73,14 +77,14 @@ internal class CoreDataHelper {
     /**
      * Persistent Store Coordinator public read-only accesor
      **/
-    public var persistentStoreCoordinator: NSPersistentStoreCoordinator? {
+    internal var persistentStoreCoordinator: NSPersistentStoreCoordinator? {
         get { return _persistentStoreCoordinator }
     }
     
     /**
-     *
-     **/
-    private lazy var managedObjectContext: NSManagedObjectContext? = {
+     * Unique managed object context for DB storing and retrieving
+     */
+    private lazy var _managedObjectContext: NSManagedObjectContext? = {
         let coordinator = self._persistentStoreCoordinator
         
         if coordinator == nil {
@@ -96,6 +100,15 @@ internal class CoreDataHelper {
         }
     }()
     
+    /**
+     * Accesor of unique managed object context
+     */
+    internal var managedObjectContext: NSManagedObjectContext? {
+        get {
+            return self._managedObjectContext
+        }
+    }
+    
     // INITIALIZERS -------------------------------------------------------------------------------
     
     /**
@@ -104,6 +117,47 @@ internal class CoreDataHelper {
     init(modelName: String, datastoreFilename: String) {
         self.modelName = modelName
         self.datastoreFilename = datastoreFilename
+    }
+    
+    // METHODS ------------------------------------------------------------------------------------
+    
+    /**
+     * Creates a new managed model object entity based on the specified model class name
+     */
+    internal func newEntity(modelName: String) -> NSManagedObject? {
+        if managedObjectContext == nil {
+            return nil
+        }
+        
+        let newManagedObject = NSEntityDescription
+            .insertNewObjectForEntityForName(modelName, inManagedObjectContext: managedObjectContext!)
+                as NSManagedObject
+        
+        return newManagedObject
+    }
+    
+    /**
+     * Saves the managed object context state by commiting unsaved changes to registered objects 
+     * to the receiver’s parent store.
+     */
+    internal func saveContext() {
+        let context = self.managedObjectContext!
+        
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                LogErrorHandler().handle(ErrorWrapper(error: error))
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
+    }
+    
+    internal func executeRequest(request: NSPersistentStoreRequest) throws {
+        try _persistentStoreCoordinator!.executeRequest(request,
+            withContext: managedObjectContext!)
     }
     
     // FUNCTIONS ----------------------------------------------------------------------------------
