@@ -11,18 +11,25 @@ import UIKit
 /**
  * Main view controller responsible of UI logic of main apps listing view
  */
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIToolbarDelegate {
+    
+    // OUTLETS ------------------------------------------------------------------------------------
 
+    @IBOutlet var variationsToolBar: UIToolbar!
+    
     // PROPERTIES ---------------------------------------------------------------------------------
     
+    /**
+     * Specific domain layer object
+     */
     private var _domain: Domain = Domain(coordinator: AppsCoordinator.shared)
     
     // LIFECYCLE ----------------------------------------------------------------------------------
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        configViews()
         loadApps()
     }
 
@@ -33,14 +40,49 @@ class ViewController: UIViewController {
 
     // FUNCTIONS ----------------------------------------------------------------------------------
     
+    /**
+     * Sets every view up according to the appearance needs
+     */
+    private func configViews() {
+        configVariationsToolBar()
+    }
+    
+    /**
+     * Sets the variations toolbar to the needed appearance
+     */
+    private func configVariationsToolBar() {
+        variationsToolBar.delegate = self
+        
+        let navBarSubviews = self.navigationController?.navigationBar.subviews
+        Log.debug("QUANTITY_OF_SUBVIEWS_OF_NAVIGATIONBAR", print: String(navBarSubviews?.count))
+        
+        for (index, subview) in navBarSubviews!.enumerate() {
+            if subview is UIImageView {
+                Log.debug("FOUND", print: "\(index) UIImageView as subview")
+                //subview.hidden = true
+            }
+        }
+        
+        navBarSubviews![2].hidden = true
+        
+        //self.navigationController?.navigationBar.clipsToBounds = true
+    }
+    
+    /**
+     * Start the data loading of the items to show
+     */
     private func loadApps() {
-        _domain.getTopFreeApps(20, returner: {
-            (apps: [App]) in
+        _domain.getTopFreeApps(20, returner: {(apps: [App]) in
             
-        }, thrower: {
-            (error: ErrorWrapper) in
+        }, thrower: {(error: ErrorWrapper) in
             LogErrorHandler().handle(error, whileDoing: "Loading apps from ViewController")
         })
+    }
+    
+    // UITOOLBARDELEGATE IMPLEMENTATION -----------------------------------------------------------
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return UIBarPosition.TopAttached
     }
 
 }
