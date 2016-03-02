@@ -39,6 +39,8 @@
 		2B46B4421C84217B007F1F3E /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4411C84217B007F1F3E /* ErrorHandler.swift */; };
 		2B46B4441C842250007F1F3E /* LogErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4431C842250007F1F3E /* LogErrorHandler.swift */; };
 		2B46B4461C842880007F1F3E /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4451C842880007F1F3E /* ErrorWrapper.swift */; };
+		2B75EAB41C86356D00944F51 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB31C86356D00944F51 /* Domain.swift */; };
+		2B75EAB61C8665C700944F51 /* AppsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		2B46B4411C84217B007F1F3E /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		2B46B4431C842250007F1F3E /* LogErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogErrorHandler.swift; sourceTree = "<group>"; };
 		2B46B4451C842880007F1F3E /* ErrorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
+		2B75EAB31C86356D00944F51 /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCoordinatorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 				2B46B40A1C822032007F1F3E /* Controllers */,
 				2B46B40D1C82219C007F1F3E /* Datasources */,
 				2B46B4091C821FC8007F1F3E /* Delegates */,
+				2B75EAB11C86353D00944F51 /* Domains */,
 				2B46B40B1C8220C5007F1F3E /* Cells */,
 				2B46B42C1C840DE4007F1F3E /* Coordinators */,
 				2B46B4111C8224E9007F1F3E /* Datastore */,
@@ -244,6 +249,7 @@
 			children = (
 				2B46B4391C8415DF007F1F3E /* OperationSupervisor.swift */,
 				2B46B4411C84217B007F1F3E /* ErrorHandler.swift */,
+				2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -304,6 +310,14 @@
 				2B46B4451C842880007F1F3E /* ErrorWrapper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		2B75EAB11C86353D00944F51 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				2B75EAB31C86356D00944F51 /* Domain.swift */,
+			);
+			name = Domains;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +465,7 @@
 				2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */,
 				2B46B4381C841343007F1F3E /* GrabilityDatastore.swift in Sources */,
 				2B46B41F1C823218007F1F3E /* Artist+CoreDataProperties.swift in Sources */,
+				2B75EAB41C86356D00944F51 /* Domain.swift in Sources */,
 				2B18E5A11C7CB3C200449B15 /* Grability.xcdatamodeld in Sources */,
 				2B46B4401C841E2D007F1F3E /* JSON.swift in Sources */,
 				2B46B41E1C823218007F1F3E /* App.swift in Sources */,
@@ -460,6 +475,7 @@
 				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
 				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
 				2B46B43C1C841733007F1F3E /* LogSupervisor.swift in Sources */,
+				2B75EAB61C8665C700944F51 /* AppsCoordinatorDelegate.swift in Sources */,
 				2B46B4441C842250007F1F3E /* LogErrorHandler.swift in Sources */,
 				2B46B4421C84217B007F1F3E /* ErrorHandler.swift in Sources */,
 				2B46B4221C823218007F1F3E /* AppImage.swift in Sources */,

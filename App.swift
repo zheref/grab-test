@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+internal enum AppVariation : String {
+    case TopFreeApplications = "topfreeapplications"
+    case NewApplications = "newapplications"
+    case NewFreeApplications = "newfreeapplications"
+    case NewPaidApplications = "newpaidapplications"
+}
 
 internal class App: NSManagedObject {
     

@@ -11,7 +11,7 @@ import Foundation
 /**
  * Base class for every networker withing this application
  **/
-internal final class AppsCoordinator {
+internal final class AppsCoordinator : AppsCoordinatorDelegate {
     
     // SINGLETON ----------------------------------------------------------------------------------
     
@@ -25,8 +25,8 @@ internal final class AppsCoordinator {
     /**
      * Unique AppsCoordinator singleton accesor
      */
-    internal static func getInstance() -> AppsCoordinator {
-        return AppsCoordinator._instance
+    internal static var shared: AppsCoordinator {
+        get { return AppsCoordinator._instance }
     }
     
     // INITIALIZERS -------------------------------------------------------------------------------
@@ -34,21 +34,19 @@ internal final class AppsCoordinator {
     /**
      * Main initializer (made private for singleton encapsulation purposes)
      */
-    private init() {
-        
-    }
+    private init() { }
     
     // METHODS ------------------------------------------------------------------------------------
     
     /**
      *
      */
-    internal func getTopFreeApps(amount: Int, returner: AppsAsyncReturner,
+    internal func get(variation: AppVariation, amount: Int, returner: AppsAsyncReturner,
         thrower: ErrorAsyncThrower) {
             
         // TODO: Respond to network connectivity changes
         if GrabilityNetworker.isNetworkAvailable {
-            AppsNetworker.shared.retrieveTopFree(amount, returner: {
+            AppsNetworker.shared.retrieve(variation, amount: amount, returner: {
                 (apps: [App]) in
                 AppsDatastore.shared.updateTopFree(apps, beingSupervisedBy: LogSupervisor())
                 returner(apps)

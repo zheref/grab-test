@@ -8,7 +8,14 @@
 
 import UIKit
 
+/**
+ * Main view controller responsible of UI logic of main apps listing view
+ */
 class ViewController: UIViewController {
+
+    // PROPERTIES ---------------------------------------------------------------------------------
+    
+    private var _domain: Domain = Domain(coordinator: AppsCoordinator.shared)
     
     // LIFECYCLE ----------------------------------------------------------------------------------
 
@@ -27,7 +34,7 @@ class ViewController: UIViewController {
     // FUNCTIONS ----------------------------------------------------------------------------------
     
     private func loadApps() {
-        AppsCoordinator.getInstance().getTopFreeApps(20, returner: {
+        _domain.getTopFreeApps(20, returner: {
             (apps: [App]) in
             
         }, thrower: {
