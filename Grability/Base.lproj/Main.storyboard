@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Root View Controller-->
         <scene sceneID="xo8-Wq-Urm">
             <objects>
-                <navigationController id="kxb-xF-w4H" sceneMemberID="viewController">
+                <navigationController id="kxb-xF-w4H" customClass="RootViewController" customModule="Grability" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gp-mP-4RG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -38,12 +38,13 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BoM-R3-eX5"/>
                                     <barButtonItem style="plain" id="Ifr-ZU-iPd">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="iOi-Xe-m2d">
-                                            <rect key="frame" x="239" y="7.5" width="121" height="29"/>
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="iOi-Xe-m2d">
+                                            <rect key="frame" x="160" y="7" width="280" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
+                                                <segment title="New Paid"/>
+                                                <segment title="Top Free"/>
+                                                <segment title="New Free"/>
                                             </segments>
                                         </segmentedControl>
                                     </barButtonItem>
@@ -53,12 +54,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="beb-G7-HSf" firstAttribute="top" secondItem="3qa-KG-UNo" secondAttribute="bottom" id="THL-5v-oO4"/>
-                            <constraint firstAttribute="trailing" secondItem="beb-G7-HSf" secondAttribute="trailing" id="e9D-UC-hlF"/>
-                            <constraint firstItem="beb-G7-HSf" firstAttribute="leading" secondItem="Z0q-ni-kh7" secondAttribute="leading" id="mci-b3-ydd"/>
+                            <constraint firstItem="beb-G7-HSf" firstAttribute="leading" secondItem="Z0q-ni-kh7" secondAttribute="leading" id="cvN-Wp-c7d"/>
+                            <constraint firstAttribute="trailing" secondItem="beb-G7-HSf" secondAttribute="trailing" id="wRy-Hq-2fd"/>
+                            <constraint firstItem="beb-G7-HSf" firstAttribute="top" secondItem="3qa-KG-UNo" secondAttribute="bottom" id="ynR-cM-BOi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Top Charts" id="c5X-FA-Kvs"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="variationsToolBar" destination="beb-G7-HSf" id="Uml-Ut-pnv"/>
                     </connections>

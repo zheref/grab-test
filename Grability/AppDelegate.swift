@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        configStatusBar()
+        
         return true
     }
 
@@ -42,6 +44,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         CoreDataHelper.shared.saveContext()
+    }
+    
+    /**
+     * Config the status bar with the expected appearance
+     */
+    func configStatusBar() {
+        let view: UIView = UIView.init(frame: CGRectMake(0, 0,
+            UIScreen.mainScreen().bounds.size.width, 20))
+        
+        view.backgroundColor = UIColor(red: 249/256, green: 249/256, blue: 249/256, alpha: 1)
+        self.window!.rootViewController!.view.addSubview(view)
     }
 
 }

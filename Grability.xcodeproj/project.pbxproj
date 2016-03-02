@@ -42,6 +42,7 @@
 		2B75EAB41C86356D00944F51 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB31C86356D00944F51 /* Domain.swift */; };
 		2B75EAB61C8665C700944F51 /* AppsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */; };
 		2B75EAB81C86C3F100944F51 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB71C86C3F100944F51 /* Log.swift */; };
+		2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB91C87ABBD00944F51 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		2B75EAB31C86356D00944F51 /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		2B75EAB71C86C3F100944F51 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		2B75EAB91C87ABBD00944F51 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				2B18E59A1C7CB3C200449B15 /* ViewController.swift */,
+				2B75EAB91C87ABBD00944F51 /* RootViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				2B46B43E1C841DE0007F1F3E /* JSONParser.swift in Sources */,
 				2B46B4261C8234E4007F1F3E /* CoreDataHelper.swift in Sources */,
 				2B46B41D1C823218007F1F3E /* App+CoreDataProperties.swift in Sources */,
+				2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */,
 				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
 				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
 				2B46B43C1C841733007F1F3E /* LogSupervisor.swift in Sources */,

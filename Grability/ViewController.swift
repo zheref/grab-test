@@ -44,6 +44,7 @@ class ViewController: UIViewController, UIToolbarDelegate {
      * Sets every view up according to the appearance needs
      */
     private func configViews() {
+        
         configVariationsToolBar()
     }
     
@@ -53,19 +54,8 @@ class ViewController: UIViewController, UIToolbarDelegate {
     private func configVariationsToolBar() {
         variationsToolBar.delegate = self
         
-        let navBarSubviews = self.navigationController?.navigationBar.subviews
-        Log.debug("QUANTITY_OF_SUBVIEWS_OF_NAVIGATIONBAR", print: String(navBarSubviews?.count))
-        
-        for (index, subview) in navBarSubviews!.enumerate() {
-            if subview is UIImageView {
-                Log.debug("FOUND", print: "\(index) UIImageView as subview")
-                //subview.hidden = true
-            }
-        }
-        
-        navBarSubviews![2].hidden = true
-        
-        //self.navigationController?.navigationBar.clipsToBounds = true
+        self.navigationController?.navigationBar.subviews[2].hidden = true
+        self.navigationController?.navigationBar.clipsToBounds = true
     }
     
     /**
