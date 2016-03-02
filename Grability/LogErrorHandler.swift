@@ -14,14 +14,17 @@ import Foundation
  */
 internal class LogErrorHandler : ErrorHandler {
     
+    internal static var shared: LogErrorHandler = {
+        return LogErrorHandler()
+    }()
+    
     /**
      * Prints into console the specified error to handle
      */
     internal func handle(error: ErrorWrapper, whileDoing doing: String = "Not Specified") {
         if error.isNs {
             let err = error._nsError
-            
-            print("Unresolved error \(err!), \(err!.userInfo)")
+            Log.error("DOING: \(doing)", print: "Unresolved error \(err!), \(err!.userInfo)")
         } else {
             let err = error._error
             
@@ -35,7 +38,8 @@ internal class LogErrorHandler : ErrorHandler {
             
             let theError = NSError(domain: "co.zheref.Grability", code: 9999, userInfo: dict)
             
-            print("Unresolved error \(theError), \(theError.userInfo)")
+            Log.error("DOING: \(doing)",
+                print: "Unresolved error \(theError), \(theError.userInfo)")
         }
     }
     

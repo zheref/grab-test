@@ -41,6 +41,7 @@
 		2B46B4461C842880007F1F3E /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B4451C842880007F1F3E /* ErrorWrapper.swift */; };
 		2B75EAB41C86356D00944F51 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB31C86356D00944F51 /* Domain.swift */; };
 		2B75EAB61C8665C700944F51 /* AppsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */; };
+		2B75EAB81C86C3F100944F51 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB71C86C3F100944F51 /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		2B46B4451C842880007F1F3E /* ErrorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		2B75EAB31C86356D00944F51 /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		2B75EAB71C86C3F100944F51 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				2B46B43D1C841DE0007F1F3E /* JSONParser.swift */,
 				2B46B43F1C841E2D007F1F3E /* JSON.swift */,
 				2B46B4451C842880007F1F3E /* ErrorWrapper.swift */,
+				2B75EAB71C86C3F100944F51 /* Log.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				2B46B4421C84217B007F1F3E /* ErrorHandler.swift in Sources */,
 				2B46B4221C823218007F1F3E /* AppImage.swift in Sources */,
 				2B46B4241C823218007F1F3E /* Category.swift in Sources */,
+				2B75EAB81C86C3F100944F51 /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
