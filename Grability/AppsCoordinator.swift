@@ -39,10 +39,16 @@ internal final class AppsCoordinator : AppsCoordinatorDelegate {
     // METHODS ------------------------------------------------------------------------------------
     
     /**
-     *
+     * Chooses where to take the data from (based on the circumstances) and dispatch them
+     * through the delegated returner
+     * - Parameter variation AppVariation: The variation of apps to retrieve
+     * - Parameter amount Int: The amount of apps to request
+     * - Parameter returner AppsAsyncReturner: The apps dispatcher closure to deliver the results
+     * - Parameter thrower ErrorAsyncThrower: The error dispatcher closure to throw in error case
      */
     internal func get(variation: AppVariation, amount: Int, returner: AppsAsyncReturner,
-        thrower: ErrorAsyncThrower) {
+    thrower: ErrorAsyncThrower) {
+        let cacheKey = "apps:\(variation.rawValue):all"
             
         // TODO: Respond to network connectivity changes
         if GrabilityNetworker.isNetworkAvailable {

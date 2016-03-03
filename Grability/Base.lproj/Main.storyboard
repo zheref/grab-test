@@ -137,22 +137,39 @@
             </objects>
             <point key="canvasLocation" x="160" y="211"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Categories-->
         <scene sceneID="cYF-9s-VRf">
             <objects>
-                <tableViewController id="hQc-wQ-24J" sceneMemberID="viewController">
+                <tableViewController id="hQc-wQ-24J" customClass="CategoriesViewController" customModule="Grability" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eAf-Nd-RXN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WkE-jI-cHA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CategoryTableCell" selectionStyle="default" indentationWidth="10" id="WkE-jI-cHA" customClass="CategoryTableCell" customModule="Grability" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WkE-jI-cHA" id="XIf-ct-vgC">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmi-GP-oHC">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Lmi-GP-oHC" secondAttribute="bottom" constant="-0.5" id="9pa-Tx-Tud"/>
+                                        <constraint firstItem="Lmi-GP-oHC" firstAttribute="top" secondItem="XIf-ct-vgC" secondAttribute="top" id="dkl-GE-Vmh"/>
+                                        <constraint firstItem="Lmi-GP-oHC" firstAttribute="leading" secondItem="XIf-ct-vgC" secondAttribute="leadingMargin" id="fdZ-9R-mg1"/>
+                                        <constraint firstItem="Lmi-GP-oHC" firstAttribute="trailing" secondItem="XIf-ct-vgC" secondAttribute="trailingMargin" id="pmM-zW-VKP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryNameLabel" destination="Lmi-GP-oHC" id="ZRJ-fq-pxs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -160,7 +177,9 @@
                             <outlet property="delegate" destination="hQc-wQ-24J" id="TnB-5B-auA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="eaW-kt-mOa"/>
+                    <navigationItem key="navigationItem" title="Categories" id="eaW-kt-mOa">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="9Zm-WK-znK"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7d-0B-5fo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

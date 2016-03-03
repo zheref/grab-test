@@ -71,7 +71,7 @@ internal final class AppsNetworker : GrabilityNetworker {
         let url: NSURL =
             GrabilityNetworker.buildUrl(variation.rawValue, forFeeding: amount)
         
-        print("GET \(url.description)")
+        print("GET: \(url.description)")
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data, response, error) in

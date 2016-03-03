@@ -49,6 +49,10 @@
 		2B75EAC21C886F5E00944F51 /* HTTPResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC11C886F5E00944F51 /* HTTPResources.swift */; };
 		2B75EAC61C88951F00944F51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC51C88951F00944F51 /* Constants.swift */; };
 		2B75EAC81C88965A00944F51 /* SimplePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC71C88965A00944F51 /* SimplePopup.swift */; };
+		2B75EACA1C889C6D00944F51 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC91C889C6D00944F51 /* CategoriesViewController.swift */; };
+		2B75EACC1C889F9200944F51 /* Memcache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EACB1C889F9200944F51 /* Memcache.swift */; };
+		2B75EACE1C889FCF00944F51 /* MemcacheObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EACD1C889FCF00944F51 /* MemcacheObserver.swift */; };
+		2B75EAD01C88AC4700944F51 /* CategoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EACF1C88AC4700944F51 /* CategoryTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		2B75EAC11C886F5E00944F51 /* HTTPResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResources.swift; sourceTree = "<group>"; };
 		2B75EAC51C88951F00944F51 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B75EAC71C88965A00944F51 /* SimplePopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePopup.swift; sourceTree = "<group>"; };
+		2B75EAC91C889C6D00944F51 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		2B75EACB1C889F9200944F51 /* Memcache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memcache.swift; sourceTree = "<group>"; };
+		2B75EACD1C889FCF00944F51 /* MemcacheObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemcacheObserver.swift; sourceTree = "<group>"; };
+		2B75EACF1C88AC4700944F51 /* CategoryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +243,7 @@
 			children = (
 				2B18E59A1C7CB3C200449B15 /* ViewController.swift */,
 				2B75EAB91C87ABBD00944F51 /* RootViewController.swift */,
+				2B75EAC91C889C6D00944F51 /* CategoriesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				2B75EABD1C88023D00944F51 /* AppCell.swift */,
+				2B75EACF1C88AC4700944F51 /* CategoryTableCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -270,6 +280,7 @@
 				2B46B4391C8415DF007F1F3E /* OperationSupervisor.swift */,
 				2B46B4411C84217B007F1F3E /* ErrorHandler.swift */,
 				2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */,
+				2B75EACD1C889FCF00944F51 /* MemcacheObserver.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 				2B46B4251C8234E4007F1F3E /* CoreDataHelper.swift */,
 				2B46B4351C841316007F1F3E /* AppsDatastore.swift */,
 				2B46B4371C841343007F1F3E /* GrabilityDatastore.swift */,
+				2B75EACB1C889F9200944F51 /* Memcache.swift */,
 			);
 			name = Datastore;
 			sourceTree = "<group>";
@@ -500,8 +512,10 @@
 				2B46B43E1C841DE0007F1F3E /* JSONParser.swift in Sources */,
 				2B46B4261C8234E4007F1F3E /* CoreDataHelper.swift in Sources */,
 				2B46B41D1C823218007F1F3E /* App+CoreDataProperties.swift in Sources */,
+				2B75EAD01C88AC4700944F51 /* CategoryTableCell.swift in Sources */,
 				2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */,
 				2B75EAC61C88951F00944F51 /* Constants.swift in Sources */,
+				2B75EACA1C889C6D00944F51 /* CategoriesViewController.swift in Sources */,
 				2B75EAC81C88965A00944F51 /* SimplePopup.swift in Sources */,
 				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
 				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
@@ -511,6 +525,8 @@
 				2B46B4421C84217B007F1F3E /* ErrorHandler.swift in Sources */,
 				2B46B4221C823218007F1F3E /* AppImage.swift in Sources */,
 				2B46B4241C823218007F1F3E /* Category.swift in Sources */,
+				2B75EACC1C889F9200944F51 /* Memcache.swift in Sources */,
+				2B75EACE1C889FCF00944F51 /* MemcacheObserver.swift in Sources */,
 				2B75EAB81C86C3F100944F51 /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
