@@ -73,7 +73,6 @@ class ViewController: UIViewController, UIToolbarDelegate {
     private func configVariationsToolBar() {
         variationsToolBar.delegate = self
         
-        self.navigationController?.navigationBar.subviews[2].hidden = true
         self.navigationController?.navigationBar.clipsToBounds = true
     }
     

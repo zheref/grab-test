@@ -53,7 +53,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Cq-gK-An5">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <rect key="frame" x="0.0" y="109" width="600" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppCellID" rowHeight="100" id="wj0-9w-Nh3" customClass="AppCell" customModule="Grability" customModuleProvider="target">
@@ -112,7 +112,7 @@
                             <constraint firstItem="4Cq-gK-An5" firstAttribute="trailing" secondItem="beb-G7-HSf" secondAttribute="trailing" id="7lZ-0z-rLv"/>
                             <constraint firstItem="beb-G7-HSf" firstAttribute="leading" secondItem="Z0q-ni-kh7" secondAttribute="leading" id="cvN-Wp-c7d"/>
                             <constraint firstItem="4Cq-gK-An5" firstAttribute="bottom" secondItem="LID-cK-kPQ" secondAttribute="top" id="hEk-OY-inz"/>
-                            <constraint firstItem="4Cq-gK-An5" firstAttribute="top" secondItem="beb-G7-HSf" secondAttribute="bottom" constant="6" id="orI-fv-yeg"/>
+                            <constraint firstItem="4Cq-gK-An5" firstAttribute="top" secondItem="beb-G7-HSf" secondAttribute="bottom" constant="1" id="orI-fv-yeg"/>
                             <constraint firstAttribute="trailing" secondItem="beb-G7-HSf" secondAttribute="trailing" id="wRy-Hq-2fd"/>
                             <constraint firstItem="4Cq-gK-An5" firstAttribute="leading" secondItem="beb-G7-HSf" secondAttribute="leading" id="yWq-MT-M9h"/>
                             <constraint firstItem="beb-G7-HSf" firstAttribute="top" secondItem="3qa-KG-UNo" secondAttribute="bottom" id="ynR-cM-BOi"/>
