@@ -61,7 +61,7 @@ internal class AppsDatasource : NSObject, UITableViewDataSource {
     // IMPLEMENTATION -----------------------------------------------------------------------------
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1;
+        return 1
     }
     
     internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +78,8 @@ internal class AppsDatasource : NSObject, UITableViewDataSource {
         return cell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    internal func tableView(tableView: UITableView, titleForHeaderInSection section: Int)
+    -> String? {
         return nil;
     }
     

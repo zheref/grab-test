@@ -10,6 +10,8 @@ import Foundation
 
 internal typealias AppsAsyncReturner = ([App]) -> ()
 
+internal typealias ImageDataAsyncReturner = (NSData) -> ()
+
 internal typealias ErrorAsyncThrower = (ErrorWrapper) -> ()
 
 internal typealias ItemAtIndexSelectedHandler = (Int) -> Void

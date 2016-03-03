@@ -62,6 +62,7 @@ class ViewController: UIViewController, UIToolbarDelegate {
      * everything related with its behaviour
      */
     private func configAppsTableView() {
+        appsTableView.registerClass(AppCell.self, forCellReuseIdentifier: "groupcell")
         appsTableView.dataSource = appsDatasource
         appsTableView.delegate = AppsDelegate(action: self.onAppsTableViewSelectedItem)
     }
@@ -81,7 +82,11 @@ class ViewController: UIViewController, UIToolbarDelegate {
      */
     private func loadApps() {
         _domain.getTopFreeApps(20, returner: {(apps: [App]) in
-            self.appsDatasource.apps = apps
+            for app in apps {
+                self.appsDatasource.add(app)
+                self.appsTableView.reloadData()
+            }
+            
             self.appsTableView.reloadData()
         }, thrower: {(error: ErrorWrapper) in
             LogErrorHandler().handle(error, whileDoing: "Loading apps from ViewController")

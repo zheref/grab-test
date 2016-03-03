@@ -15,6 +15,8 @@ internal class AppCell : UITableViewCell {
     // OUTLETS ------------------------------------------------------------------------------------
     
     @IBOutlet var appNameLabel: UILabel!
+    @IBOutlet var categoryNameLabel: UILabel!
+    @IBOutlet var appIconImageView: UIImageView!
     
     // METHODS ------------------------------------------------------------------------------------
     
@@ -22,8 +24,20 @@ internal class AppCell : UITableViewCell {
      * Applies a model data into the subviews of the cell according to the needs
      */
     internal func applyModel(model: App) {
-        Log.debug(LOG_TAG, print: "Assigning name: \(model.name) to cell")
         appNameLabel.text = model.name
+        
+        if let images = model.images {
+            let firstImageLink = (images[2] as! AppImage).link!
+            
+            HTTPResources.getImage(firstImageLink, by: {(imageData: NSData) in
+                self.appIconImageView.image = UIImage(data: imageData)
+            }, orFailWith: {(error: ErrorWrapper) in
+                
+            })
+        }
+        
+        let category = model.category!
+        categoryNameLabel.text = category.label
     }
     
     // OVERRIDE -----------------------------------------------------------------------------------

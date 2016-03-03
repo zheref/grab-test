@@ -10,8 +10,19 @@ import Foundation
 import CoreData
 
 
-class Category: NSManagedObject {
+internal class Category: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    private static let modelName: String = "Category"
+    
+    /**
+     * Creates a new managed instance of a category based on the given arguments
+     * - Parameter label String: The label to be displayed for the category as its name
+     */
+    internal static func fromArguments(label: String) -> Category {
+        let category = CoreDataHelper.shared.newEntity(Category.modelName) as! Category
+        category.label = label
+            
+        return category
+    }
 
 }
