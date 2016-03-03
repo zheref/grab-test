@@ -26,6 +26,14 @@ class ViewController: UIViewController, UIToolbarDelegate {
      */
     private var _domain: Domain = Domain(coordinator: AppsCoordinator.shared)
     
+    /**
+     * Datasource of app items to be displayed on the table view
+     */
+    private var appsDatasource: AppsDatasource = {
+        let ads = AppsDatasource(initialItems: [])
+        return ads
+    }()
+    
     // LIFECYCLE ----------------------------------------------------------------------------------
 
     override func viewDidLoad() {
@@ -37,17 +45,25 @@ class ViewController: UIViewController, UIToolbarDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // FUNCTIONS ----------------------------------------------------------------------------------
     
     /**
-     * Sets every view up according to the appearance needs
+     * Sets every view up according to the appearance and UX needs
      */
     private func configViews() {
-        
+        configAppsTableView()
         configVariationsToolBar()
+    }
+    
+    /**
+     * Configs everything related with the table view, its datasource, delegate and
+     * everything related with its behaviour
+     */
+    private func configAppsTableView() {
+        appsTableView.dataSource = appsDatasource
+        appsTableView.delegate = AppsDelegate(action: self.onAppsTableViewSelectedItem)
     }
     
     /**
@@ -65,10 +81,20 @@ class ViewController: UIViewController, UIToolbarDelegate {
      */
     private func loadApps() {
         _domain.getTopFreeApps(20, returner: {(apps: [App]) in
-            
+            self.appsDatasource.apps = apps
+            self.appsTableView.reloadData()
         }, thrower: {(error: ErrorWrapper) in
             LogErrorHandler().handle(error, whileDoing: "Loading apps from ViewController")
         })
+    }
+    
+    // ACTIONS ------------------------------------------------------------------------------------
+    
+    /**
+     * Triggered when user selects an app item on the TableView
+     */
+    private func onAppsTableViewSelectedItem(selectedIndex: Int) {
+        
     }
     
     // UITOOLBARDELEGATE IMPLEMENTATION -----------------------------------------------------------

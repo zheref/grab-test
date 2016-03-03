@@ -11,3 +11,5 @@ import Foundation
 internal typealias AppsAsyncReturner = ([App]) -> ()
 
 internal typealias ErrorAsyncThrower = (ErrorWrapper) -> ()
+
+internal typealias ItemAtIndexSelectedHandler = (Int) -> Void

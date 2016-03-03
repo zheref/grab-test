@@ -43,6 +43,9 @@
 		2B75EAB61C8665C700944F51 /* AppsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */; };
 		2B75EAB81C86C3F100944F51 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB71C86C3F100944F51 /* Log.swift */; };
 		2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB91C87ABBD00944F51 /* RootViewController.swift */; };
+		2B75EABC1C87FEFE00944F51 /* AppsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */; };
+		2B75EABE1C88023D00944F51 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABD1C88023D00944F51 /* AppCell.swift */; };
+		2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABF1C885B8300944F51 /* AppsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		2B75EAB51C8665C700944F51 /* AppsCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		2B75EAB71C86C3F100944F51 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2B75EAB91C87ABBD00944F51 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDatasource.swift; sourceTree = "<group>"; };
+		2B75EABD1C88023D00944F51 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		2B75EABF1C885B8300944F51 /* AppsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +219,7 @@
 			children = (
 				2B46B43B1C841733007F1F3E /* LogSupervisor.swift */,
 				2B46B4431C842250007F1F3E /* LogErrorHandler.swift */,
+				2B75EABF1C885B8300944F51 /* AppsDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 		2B46B40B1C8220C5007F1F3E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2B75EABD1C88023D00944F51 /* AppCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 		2B46B40D1C82219C007F1F3E /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
+				2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */,
 			);
 			name = Datasources;
 			sourceTree = "<group>";
@@ -466,10 +475,13 @@
 				2B46B4211C823218007F1F3E /* AppImage+CoreDataProperties.swift in Sources */,
 				2B46B42E1C840E04007F1F3E /* AppsCoordinator.swift in Sources */,
 				2B18E5991C7CB3C200449B15 /* AppDelegate.swift in Sources */,
+				2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */,
 				2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */,
+				2B75EABE1C88023D00944F51 /* AppCell.swift in Sources */,
 				2B46B4341C841177007F1F3E /* Reachability.swift in Sources */,
 				2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */,
 				2B46B4381C841343007F1F3E /* GrabilityDatastore.swift in Sources */,
+				2B75EABC1C87FEFE00944F51 /* AppsDatasource.swift in Sources */,
 				2B46B41F1C823218007F1F3E /* Artist+CoreDataProperties.swift in Sources */,
 				2B75EAB41C86356D00944F51 /* Domain.swift in Sources */,
 				2B18E5A11C7CB3C200449B15 /* Grability.xcdatamodeld in Sources */,
