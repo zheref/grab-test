@@ -92,7 +92,25 @@ class ViewController: UIViewController, UIToolbarDelegate {
         })
     }
     
+    private func toggleCategoriesPopover() {
+        
+    }
+    
     // ACTIONS ------------------------------------------------------------------------------------
+    
+    /**
+     * Triggered when the "Categories" button item is tapped
+     */
+    @IBAction func onCategoriesBarButtonItemAction(sender: UIBarButtonItem) {
+        switch (UIDevice.currentDevice().userInterfaceIdiom) {
+        case .Pad:
+            toggleCategoriesPopover()
+        case .Phone:
+            performSegueWithIdentifier(Segues.AppsToCategories, sender: self)
+        default:
+            SimplePopup.alert("Defaulting. Why is this even happening?", from: self)
+        }
+    }
     
     /**
      * Triggered when user selects an app item on the TableView

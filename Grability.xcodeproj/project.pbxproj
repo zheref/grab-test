@@ -47,6 +47,8 @@
 		2B75EABE1C88023D00944F51 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABD1C88023D00944F51 /* AppCell.swift */; };
 		2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABF1C885B8300944F51 /* AppsDelegate.swift */; };
 		2B75EAC21C886F5E00944F51 /* HTTPResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC11C886F5E00944F51 /* HTTPResources.swift */; };
+		2B75EAC61C88951F00944F51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC51C88951F00944F51 /* Constants.swift */; };
+		2B75EAC81C88965A00944F51 /* SimplePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC71C88965A00944F51 /* SimplePopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		2B75EABD1C88023D00944F51 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		2B75EABF1C885B8300944F51 /* AppsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDelegate.swift; sourceTree = "<group>"; };
 		2B75EAC11C886F5E00944F51 /* HTTPResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResources.swift; sourceTree = "<group>"; };
+		2B75EAC51C88951F00944F51 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2B75EAC71C88965A00944F51 /* SimplePopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +281,7 @@
 				2B18E5A71C7CB3C200449B15 /* Info.plist */,
 				2B18E59F1C7CB3C200449B15 /* Grability.xcdatamodeld */,
 				2B46B4301C840EBD007F1F3E /* TypeAliases.swift */,
+				2B75EAC51C88951F00944F51 /* Constants.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				2B46B4451C842880007F1F3E /* ErrorWrapper.swift */,
 				2B75EAB71C86C3F100944F51 /* Log.swift */,
 				2B75EAC11C886F5E00944F51 /* HTTPResources.swift */,
+				2B75EAC71C88965A00944F51 /* SimplePopup.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -495,6 +501,8 @@
 				2B46B4261C8234E4007F1F3E /* CoreDataHelper.swift in Sources */,
 				2B46B41D1C823218007F1F3E /* App+CoreDataProperties.swift in Sources */,
 				2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */,
+				2B75EAC61C88951F00944F51 /* Constants.swift in Sources */,
+				2B75EAC81C88965A00944F51 /* SimplePopup.swift in Sources */,
 				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
 				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
 				2B46B43C1C841733007F1F3E /* LogSupervisor.swift in Sources */,
