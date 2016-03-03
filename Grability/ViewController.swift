@@ -16,6 +16,8 @@ class ViewController: UIViewController, UIToolbarDelegate {
     // OUTLETS ------------------------------------------------------------------------------------
 
     @IBOutlet var variationsToolBar: UIToolbar!
+    @IBOutlet var variationsSegmentedControl: UISegmentedControl!
+    @IBOutlet var appsTableView: UITableView!
     
     // PROPERTIES ---------------------------------------------------------------------------------
     

@@ -51,17 +51,39 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x9x-P6-F1T"/>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Cq-gK-An5">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wj0-9w-Nh3">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wj0-9w-Nh3" id="GLx-yc-bRp">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4Cq-gK-An5" firstAttribute="trailing" secondItem="beb-G7-HSf" secondAttribute="trailing" id="7lZ-0z-rLv"/>
                             <constraint firstItem="beb-G7-HSf" firstAttribute="leading" secondItem="Z0q-ni-kh7" secondAttribute="leading" id="cvN-Wp-c7d"/>
+                            <constraint firstItem="4Cq-gK-An5" firstAttribute="bottom" secondItem="LID-cK-kPQ" secondAttribute="top" id="hEk-OY-inz"/>
+                            <constraint firstItem="4Cq-gK-An5" firstAttribute="top" secondItem="beb-G7-HSf" secondAttribute="bottom" id="orI-fv-yeg"/>
                             <constraint firstAttribute="trailing" secondItem="beb-G7-HSf" secondAttribute="trailing" id="wRy-Hq-2fd"/>
+                            <constraint firstItem="4Cq-gK-An5" firstAttribute="leading" secondItem="beb-G7-HSf" secondAttribute="leading" id="yWq-MT-M9h"/>
                             <constraint firstItem="beb-G7-HSf" firstAttribute="top" secondItem="3qa-KG-UNo" secondAttribute="bottom" id="ynR-cM-BOi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Top Charts" id="c5X-FA-Kvs"/>
+                    <navigationItem key="navigationItem" title="Top Charts" id="c5X-FA-Kvs">
+                        <barButtonItem key="leftBarButtonItem" title="Categories" id="OfA-Mi-cj4"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="appsTableView" destination="4Cq-gK-An5" id="t0T-RS-gE5"/>
+                        <outlet property="variationsSegmentedControl" destination="iOi-Xe-m2d" id="ANo-7V-Zaq"/>
                         <outlet property="variationsToolBar" destination="beb-G7-HSf" id="Uml-Ut-pnv"/>
                     </connections>
                 </viewController>
