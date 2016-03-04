@@ -61,14 +61,20 @@ internal final class AppsCoordinator : AppsCoordinatorDelegate {
                 AppsNetworker.shared.retrieve(variation, category: category, amount: amount,
                 returner: {(apps: [App]) in
                     Memcache.shared.addOrUpdateKey(cacheKey, withData: apps)
-                    //AppsDatastore.shared.updateTopFree(apps, beingSupervisedBy: LogSupervisor())
+                    AppsDatastore.shared.updateApps(apps, beingSupervisedBy: LogSupervisor())
+                    
                     if category == nil {
                         self.collectAndMemcacheCategories(apps)
                     }
+                    
                     returner(apps)
                 }, thrower: thrower)
             } else {
-                AppsDatastore.shared.retrieveTopFree(amount, returner: returner)
+                AppsDatastore.shared.retrieve(variation, category: category, amount: amount,
+                    returner: {(apps: [App]) in
+                        Memcache.shared.addOrUpdateKey(cacheKey, withData: apps)
+                        returner(apps)
+                    }, thrower: thrower)
             }
         }
     }

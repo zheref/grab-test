@@ -45,19 +45,41 @@ internal final class AppsDatastore : GrabilityDatastore {
     
     // METHODS ------------------------------------------------------------------------------------
     
-    /**
-    * Retrieves the specified amount of apps from top free
-    */
-    internal func retrieveTopFree(amount: Int, returner: AppsAsyncReturner) {
+    internal func retrieve(variation: AppVariation, category: Category?, amount: Int,
+    returner: AppsAsyncReturner, thrower: ErrorAsyncThrower)
+    {
+        // TODO: For time constraints I'm always bringing the last saved variation insted
+        // of differentiating them in the local DB
         
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = NSEntityDescription.entityForName(App.modelName,
+            inManagedObjectContext: CoreDataHelper.shared.managedObjectContext!)
+        fetchRequest.includesPropertyValues = true
+        fetchRequest.fetchLimit = amount
+        
+        do {
+            let results = try CoreDataHelper.shared.managedObjectContext!
+                .executeFetchRequest(fetchRequest) as? [App]
+            
+            if let items = results {
+                returner(items)
+            } else {
+                thrower(ErrorWrapper(ns: NSError(domain: "AppsDatastore",
+                    code: 124, userInfo: nil)))
+            }
+        } catch let error as NSError {
+            let wrapper = ErrorWrapper(ns: error)
+            LogErrorHandler().handle(wrapper)
+            thrower(wrapper)
+        }
     }
     
     /**
      *
      */
-    internal func updateTopFree(apps: [App], beingSupervisedBy supervisor: OperationSupervisor) {
-        let processName = "UPDATE_FREEAPPS_FROM_API_INTO_DB"
-        clearTopFree(supervisor)
+    internal func updateApps(apps: [App], beingSupervisedBy supervisor: OperationSupervisor) {
+        let processName = "UPDATE_APPS_DB"
+        clearApps(supervisor)
         supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Started)
         CoreDataHelper.shared.saveContext()
         supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Finished)
@@ -66,8 +88,8 @@ internal final class AppsDatastore : GrabilityDatastore {
     /**
      * Clear the table related with the Top Free Apps entity completely
      */
-    private func clearTopFree(supervisor: OperationSupervisor) {
-        let processName = "CLEAR_TOPFREEAPPS_FROM_DB"
+    private func clearApps(supervisor: OperationSupervisor) {
+        let processName = "CLEAR_APPS_DB"
         
         if #available(iOS 9.0, *) {
             supervisor.notifyProcessWithName(processName, markedAs: OperationStatus.Started)
