@@ -74,6 +74,7 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
     private func configViews() {
         configAppsCollectionView()
         configVariationsToolBar()
+        animate()
     }
     
     /**
@@ -122,6 +123,19 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
     
     private func changeNavigationTitle(to newTitle: String) {
         self.navigationController?.navigationBar.topItem?.title = newTitle
+    }
+    
+    private func animate() {
+        view.frame = CGRectMake(-600, view.frame.origin.y, view.frame.width, view.frame.height)
+        
+        view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+        
+        UIView.animateWithDuration(1.2, delay: 0, usingSpringWithDamping: 0.60,
+            initialSpringVelocity: 0, options: .CurveLinear, animations: { () -> Void in
+            self.view.frame = CGRectMake(0, self.view.frame.origin.y, self.view.frame.width,
+                self.view.frame.height)
+            }) { (completed) -> Void in }
     }
     
     // ACTIONS ------------------------------------------------------------------------------------
