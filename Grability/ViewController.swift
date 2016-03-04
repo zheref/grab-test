@@ -140,14 +140,6 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
         }
     }
     
-    /**
-     * Triggered when user selects an app item on the TableView
-     */
-    private func onAppsTableViewSelectedItem(selectedIndex: Int) {
-        _domain.lastTappedVar = appsDatasource[selectedIndex]
-        performSegueWithIdentifier(Segues.AppToDetails, sender: self)
-    }
-    
     // UITOOLBARDELEGATE IMPLEMENTATION -----------------------------------------------------------
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
@@ -177,8 +169,8 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
     func collectionView(collectionView: UICollectionView,
         didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        Log.debug("ViewController", print: "Entered didSelected")
-        self.onAppsTableViewSelectedItem(indexPath.row)
+        _domain.lastTappedVar = appsDatasource[indexPath.row]
+        performSegueWithIdentifier(Segues.AppToDetails, sender: self)
     }
 
 }

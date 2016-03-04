@@ -176,7 +176,7 @@
                         <outlet property="variationsSegmentedControl" destination="iOi-Xe-m2d" id="ANo-7V-Zaq"/>
                         <outlet property="variationsToolBar" destination="beb-G7-HSf" id="Uml-Ut-pnv"/>
                         <segue destination="Bzi-og-YF2" kind="presentation" identifier="AppsToCategoriesSegue" id="1Oh-7W-gpc"/>
-                        <segue destination="Z0n-4U-HQO" kind="show" identifier="AppToDetails" action="showDetailViewController:sender:" id="5Ne-oZ-QdR"/>
+                        <segue destination="Z0n-4U-HQO" kind="push" identifier="AppToDetails" id="5Ne-oZ-QdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIg-qK-Dkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,6 +323,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="bnq-I2-61C"/>
                     <connections>
                         <outlet property="appCategoryLabel" destination="unD-gc-x7Y" id="zoL-5X-YBp"/>
                         <outlet property="appIconImageView" destination="fdU-cA-2Z0" id="9V0-dv-iHh"/>
