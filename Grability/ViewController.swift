@@ -52,8 +52,10 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Segues.AppsToCategories {
-            if let controller = segue.destinationViewController as? CategoriesController {
-                controller.delegate = self
+            if let navController = segue.destinationViewController as? UINavigationController {
+                if let controller = navController.topViewController as? CategoriesController {
+                    controller.delegate = self
+                }
             }
         }
     }
