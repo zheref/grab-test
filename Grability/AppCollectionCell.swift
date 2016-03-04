@@ -8,12 +8,12 @@
 
 import UIKit
 
-internal class AppCell : UITableViewCell {
+internal class AppCollectionCell : UICollectionViewCell {
     
-    private let LOG_TAG = "AppCell"
+    private let LOG_TAG = "AppCollectionCell"
     
     // OUTLETS ------------------------------------------------------------------------------------
-    
+
     @IBOutlet var appNameLabel: UILabel!
     @IBOutlet var categoryNameLabel: UILabel!
     @IBOutlet var appIconImageView: UIImageView!

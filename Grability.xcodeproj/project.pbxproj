@@ -44,7 +44,7 @@
 		2B75EAB81C86C3F100944F51 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB71C86C3F100944F51 /* Log.swift */; };
 		2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB91C87ABBD00944F51 /* RootViewController.swift */; };
 		2B75EABC1C87FEFE00944F51 /* AppsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */; };
-		2B75EABE1C88023D00944F51 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABD1C88023D00944F51 /* AppCell.swift */; };
+		2B75EABE1C88023D00944F51 /* AppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABD1C88023D00944F51 /* AppCollectionCell.swift */; };
 		2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABF1C885B8300944F51 /* AppsDelegate.swift */; };
 		2B75EAC21C886F5E00944F51 /* HTTPResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC11C886F5E00944F51 /* HTTPResources.swift */; };
 		2B75EAC61C88951F00944F51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC51C88951F00944F51 /* Constants.swift */; };
@@ -120,7 +120,7 @@
 		2B75EAB71C86C3F100944F51 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		2B75EAB91C87ABBD00944F51 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDatasource.swift; sourceTree = "<group>"; };
-		2B75EABD1C88023D00944F51 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		2B75EABD1C88023D00944F51 /* AppCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCollectionCell.swift; sourceTree = "<group>"; };
 		2B75EABF1C885B8300944F51 /* AppsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDelegate.swift; sourceTree = "<group>"; };
 		2B75EAC11C886F5E00944F51 /* HTTPResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResources.swift; sourceTree = "<group>"; };
 		2B75EAC51C88951F00944F51 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		2B46B40B1C8220C5007F1F3E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2B75EABD1C88023D00944F51 /* AppCell.swift */,
+				2B75EABD1C88023D00944F51 /* AppCollectionCell.swift */,
 				2B75EACF1C88AC4700944F51 /* CategoryTableCell.swift */,
 			);
 			name = Cells;
@@ -512,7 +512,7 @@
 				2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */,
 				2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */,
 				2B75EAD21C88C75600944F51 /* CategoriesCoordinator.swift in Sources */,
-				2B75EABE1C88023D00944F51 /* AppCell.swift in Sources */,
+				2B75EABE1C88023D00944F51 /* AppCollectionCell.swift in Sources */,
 				2B46B4341C841177007F1F3E /* Reachability.swift in Sources */,
 				2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */,
 				2B75EAD81C89595E00944F51 /* CategoriesDomain.swift in Sources */,

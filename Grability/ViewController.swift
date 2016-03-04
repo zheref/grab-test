@@ -13,11 +13,13 @@ import UIKit
  */
 internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSelectionDelegate {
     
+    private let LOG_TAG = "ViewController"
+    
     // OUTLETS ------------------------------------------------------------------------------------
 
     @IBOutlet var variationsToolBar: UIToolbar!
     @IBOutlet var variationsSegmentedControl: UISegmentedControl!
-    @IBOutlet var appsTableView: UITableView!
+    @IBOutlet var appsCollectionView: UICollectionView!
     
     // PROPERTIES ---------------------------------------------------------------------------------
     
@@ -66,7 +68,7 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      * Sets every view up according to the appearance and UX needs
      */
     private func configViews() {
-        configAppsTableView()
+        configAppsCollectionView()
         configVariationsToolBar()
     }
     
@@ -74,10 +76,11 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      * Configs everything related with the table view, its datasource, delegate and
      * everything related with its behaviour
      */
-    private func configAppsTableView() {
-        appsTableView.registerClass(AppCell.self, forCellReuseIdentifier: "groupcell")
-        appsTableView.dataSource = appsDatasource
-        appsTableView.delegate = AppsDelegate(action: self.onAppsTableViewSelectedItem)
+    private func configAppsCollectionView() {
+        appsCollectionView.registerClass(AppCollectionCell.self,
+            forCellWithReuseIdentifier: "groupcell")
+        appsCollectionView.dataSource = appsDatasource
+        appsCollectionView.delegate = AppsDelegate(action: self.onAppsTableViewSelectedItem)
     }
     
     /**
@@ -94,12 +97,15 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      */
     private func loadApps() {
         _domain.getTopFreeApps(20, returner: {(apps: [App]) in
+            self.appsDatasource.clear()
+            
             for app in apps {
                 self.appsDatasource.add(app)
-                self.appsTableView.reloadData()
             }
             
-            self.appsTableView.reloadData()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.appsCollectionView.reloadData()
+            }
         }, thrower: {(error: ErrorWrapper) in
             LogErrorHandler().handle(error, whileDoing: "Loading apps from ViewController")
         })

@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class AppsDelegate : NSObject, UITableViewDelegate {
+internal class AppsDelegate : NSObject, UICollectionViewDelegate {
     
     var action: ItemAtIndexSelectedHandler
     
@@ -19,7 +19,8 @@ internal class AppsDelegate : NSObject, UITableViewDelegate {
 
     // IMPLEMENTATION -----------------------------------------------------------------------------
 
-    internal func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    internal func collectionView(collectionView: UICollectionView,
+    didSelectCellAtIndexPath indexPath: NSIndexPath) {
         action(indexPath.row)
     }
     

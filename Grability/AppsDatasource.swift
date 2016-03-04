@@ -8,9 +8,11 @@
 
 import UIKit
 
-internal class AppsDatasource : NSObject, UITableViewDataSource {
+internal class AppsDatasource : NSObject, UICollectionViewDataSource {
     
     // CONSTANTS ----------------------------------------------------------------------------------
+    
+    private let LOG_TAG = "AppsDatasource"
     
     private let REUSABILITY_ID = "AppCellID"
     
@@ -58,20 +60,27 @@ internal class AppsDatasource : NSObject, UITableViewDataSource {
         _apps.appendContentsOf(items)
     }
     
+    internal func clear() {
+        _apps.removeAll()
+    }
+    
     // IMPLEMENTATION -----------------------------------------------------------------------------
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func collectionView(collectionView: UICollectionView,
+    numberOfItemsInSection section: Int) -> Int
+    {
         return _apps.count
     }
     
-    internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
-    -> UITableViewCell {
-        let cell: AppCell = tableView.dequeueReusableCellWithIdentifier(
-            REUSABILITY_ID, forIndexPath: indexPath) as! AppCell;
+    internal func collectionView(collectionView: UICollectionView,
+    cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        let cell: AppCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(
+            REUSABILITY_ID, forIndexPath: indexPath) as! AppCollectionCell;
         
         cell.applyModel(_apps[indexPath.row])
         
