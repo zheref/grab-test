@@ -42,23 +42,29 @@ internal final class AppsCoordinator : AppsCoordinatorDelegate {
      * Chooses where to take the data from (based on the circumstances) and dispatch them
      * through the delegated returner
      * - Parameter variation AppVariation: The variation of apps to retrieve
+     * - Parameter category Category: The category of the products that are wanted to be retrieved
      * - Parameter amount Int: The amount of apps to request
      * - Parameter returner AppsAsyncReturner: The apps dispatcher closure to deliver the results
      * - Parameter thrower ErrorAsyncThrower: The error dispatcher closure to throw in error case
      */
-    internal func get(variation: AppVariation, amount: Int, returner: AppsAsyncReturner,
-    thrower: ErrorAsyncThrower) {
-        let cacheKey = "apps:\(variation.rawValue):all"
+    internal func get(variation: AppVariation, category: Category?, amount: Int,
+    returner: AppsAsyncReturner, thrower: ErrorAsyncThrower)
+    {
+        let cacheCategoryKey = category != nil ? category!.link : "all"
+        let cacheKey = "apps:\(variation.rawValue):\(cacheCategoryKey)"
         
         if Memcache.shared.hasKey(cacheKey) {
             returner(Memcache.shared[cacheKey]! as! [App])
         } else {
             // TODO: Respond to network connectivity changes
             if GrabilityNetworker.isNetworkAvailable {
-                AppsNetworker.shared.retrieve(variation, amount: amount, returner: {(apps: [App]) in
+                AppsNetworker.shared.retrieve(variation, category: category, amount: amount,
+                returner: {(apps: [App]) in
                     Memcache.shared.addOrUpdateKey(cacheKey, withData: apps)
                     //AppsDatastore.shared.updateTopFree(apps, beingSupervisedBy: LogSupervisor())
-                    self.collectAndMemcacheCategories(apps)
+                    if category == nil {
+                        self.collectAndMemcacheCategories(apps)
+                    }
                     returner(apps)
                 }, thrower: thrower)
             } else {

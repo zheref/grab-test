@@ -46,8 +46,11 @@ internal class App: NSManagedObject {
         let largeImageUrl = getLabel(largeImageJson!)
         appImagesRelation.addObject(AppImage.fromArguments(3, withUrl: largeImageUrl))
         
+        let categoryId = getAttributeForKey("category", attribute: "im:id", fromJson: json)
+        let categoryLink = getAttributeForKey("category", attribute: "scheme", fromJson: json)
         let categoryLabel = getAttributeForKey("category", attribute: "label", fromJson: json)
-        app.setValue(Category.fromArguments(categoryLabel), forKeyPath: "category")
+        app.setValue(Category.fromArguments(categoryId, label: categoryLabel, link: categoryLink),
+            forKeyPath: "category")
         
         return app
     }

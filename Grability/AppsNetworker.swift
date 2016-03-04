@@ -64,12 +64,15 @@ internal final class AppsNetworker : GrabilityNetworker {
     // METHODS ------------------------------------------------------------------------------------
     
     /**
-     * Retrieves the specified amount of apps from top free
+     * Retrieves the specified amount of apps from the specified variation (classification)
+     * of apps
      */
-    internal func retrieve(variation: AppVariation, amount: Int, returner: AppsAsyncReturner,
-    thrower: ErrorAsyncThrower) {
+    internal func retrieve(variation: AppVariation, category: Category?, amount: Int,
+    returner: AppsAsyncReturner, thrower: ErrorAsyncThrower)
+    {
+        let categoryStr = category != nil ? category!.id : ""
         let url: NSURL =
-            GrabilityNetworker.buildUrl(variation.rawValue, forFeeding: amount)
+            GrabilityNetworker.buildUrl(variation.rawValue, forFeeding: amount, forGenre: categoryStr!)
         
         print("GET: \(url.description)")
         

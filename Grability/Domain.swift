@@ -12,11 +12,19 @@ internal class Domain {
     
     // PROPERTIES ---------------------------------------------------------------------------------
     
+    private var _appsCoordinator: AppsCoordinatorDelegate
     
-    var _appsCoordinator: AppsCoordinatorDelegate
-    
-    var appsCoordinator: AppsCoordinatorDelegate {
+    internal var appsCoordinator: AppsCoordinatorDelegate {
         get { return _appsCoordinator }
+    }
+    
+    private var _selectedCategory: Category?
+    
+    internal var selectedCategory: Category? {
+        get { return _selectedCategory }
+        set (val) {
+            _selectedCategory = val
+        }
     }
     
     // INITIALIZERS -------------------------------------------------------------------------------
@@ -36,10 +44,10 @@ internal class Domain {
      * - Parameter returner: Closure who will receive the async returned items
      */
     internal func getTopFreeApps(amount: Int, returner: AppsAsyncReturner,
-    thrower: ErrorAsyncThrower) {
-        
-        appsCoordinator.get(AppVariation.TopFreeApplications, amount: amount,
-            returner: returner, thrower: thrower)
+    thrower: ErrorAsyncThrower)
+    {
+        appsCoordinator.get(AppVariation.TopFreeApplications, category: selectedCategory,
+            amount: amount, returner: returner, thrower: thrower)
     }
     
     /**

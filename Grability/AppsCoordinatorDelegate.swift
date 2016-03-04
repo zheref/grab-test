@@ -10,7 +10,7 @@ import Foundation
 
 protocol AppsCoordinatorDelegate {
     
-    func get(variation: AppVariation, amount: Int, returner: AppsAsyncReturner,
-        thrower: ErrorAsyncThrower)
+    func get(variation: AppVariation, category: Category?, amount: Int,
+        returner: AppsAsyncReturner, thrower: ErrorAsyncThrower)
     
 }

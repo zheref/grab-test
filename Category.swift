@@ -18,9 +18,16 @@ internal class Category: NSManagedObject {
      * Creates a new managed instance of a category based on the given arguments
      * - Parameter label String: The label to be displayed for the category as its name
      */
-    internal static func fromArguments(label: String) -> Category {
+    internal static func fromArguments(id: String, label: String, link: String) -> Category {
         let category = CoreDataHelper.shared.newEntity(Category.modelName) as! Category
+        
+        category.id = id
         category.label = label
+        
+        let parts = link.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "/"))
+        let isolatedLink = parts[5]
+        
+        category.link = isolatedLink
             
         return category
     }

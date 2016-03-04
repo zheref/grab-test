@@ -147,7 +147,8 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
     // CATEGORIESSELECTIONDELEGATE IMPLEMENTATION -------------------------------------------------
     
     func passValueBack(category: Category) {
-        
+        _domain.selectedCategory = category
+        loadApps()
     }
 
 }
