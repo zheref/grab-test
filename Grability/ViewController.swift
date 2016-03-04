@@ -115,6 +115,10 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
         
     }
     
+    private func changeNavigationTitle(to newTitle: String) {
+        self.navigationController?.navigationBar.topItem?.title = newTitle
+    }
+    
     // ACTIONS ------------------------------------------------------------------------------------
     
     /**
@@ -152,6 +156,12 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
         _domain.selectedCategory = category
         
         if changed {
+            if category != nil {
+                changeNavigationTitle(to: category!.label!)
+            } else {
+                changeNavigationTitle(to: "Top Charts")
+            }
+            
             loadApps()
         }
     }
