@@ -96,7 +96,7 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      * Start the data loading of the items to show
      */
     private func loadApps() {
-        _domain.getTopFreeApps(20, returner: {(apps: [App]) in
+        _domain.getTopFreeApps(50, returner: {(apps: [App]) in
             self.appsDatasource.clear()
             
             for app in apps {
@@ -146,9 +146,14 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
     
     // CATEGORIESSELECTIONDELEGATE IMPLEMENTATION -------------------------------------------------
     
-    func passValueBack(category: Category) {
+    func passValueBack(category: Category?) {
+        let changed = _domain.selectedCategory != category
+        
         _domain.selectedCategory = category
-        loadApps()
+        
+        if changed {
+            loadApps()
+        }
     }
 
 }

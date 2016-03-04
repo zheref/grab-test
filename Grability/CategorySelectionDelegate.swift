@@ -10,6 +10,6 @@ import Foundation
 
 internal protocol CategoriesSelectionDelegate {
     
-    func passValueBack(category: Category)
+    func passValueBack(category: Category?)
     
 }

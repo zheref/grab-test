@@ -232,6 +232,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="eaW-kt-mOa">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="SOw-nV-jGe">
+                            <connections>
+                                <action selector="onClearBarButtonItemAction:" destination="hQc-wQ-24J" id="Dzj-wm-h2K"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Close" id="9Zm-WK-znK">
                             <connections>
                                 <action selector="onCloseBarButtonItemAction:" destination="hQc-wQ-24J" id="Jbf-jO-Snl"/>
@@ -246,7 +251,6 @@
         <!--Navigation Controller-->
         <scene sceneID="2rP-dB-7pw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VR2-Hr-lAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Bzi-og-YF2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fga-KG-Qkd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -256,6 +260,7 @@
                         <segue destination="hQc-wQ-24J" kind="relationship" relationship="rootViewController" id="X0m-lE-Acf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VR2-Hr-lAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169" y="-529"/>
         </scene>

@@ -100,15 +100,17 @@ internal class CategoriesController: UITableViewController {
         })
     }
     
+    private func close() {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {});
+    }
+    
     /**
      * Close the categories window to get back to the apps collection, specifying a new
      * category to filter with if it has been chosen by the user
      */
-    private func close(withCategory category: Category? = nil) {
+    private func close(withCategory category: Category?) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {() in
-            if let category = category {
-                self._delegate!.passValueBack(category)
-            }
+            self._delegate!.passValueBack(category)
         });
     }
     
@@ -118,5 +120,8 @@ internal class CategoriesController: UITableViewController {
         close()
     }
     
-    
+    @IBAction func onClearBarButtonItemAction(sender: UIBarButtonItem) {
+        close(withCategory: nil)
+    }
+
 }
