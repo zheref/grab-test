@@ -44,6 +44,13 @@ internal class AppCollectionCell : UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib();
+        
+        ImagesHelper.applyIOSMask(self.appIconImageView!)
+        
+        UIView.animateWithDuration(1.5, delay: 0, options: .CurveEaseInOut, animations:
+            { () -> Void in
+                self.appIconImageView?.alpha = 1
+            }) { (completed) -> Void in }
     }
     
     override func prepareForReuse() {

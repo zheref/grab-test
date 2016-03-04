@@ -15,6 +15,7 @@ internal class AppDetailsController: UIViewController {
     @IBOutlet var appIconImageView: UIImageView!
     @IBOutlet var appNameLabel: UILabel!
     @IBOutlet var appCategoryLabel: UILabel!
+    @IBOutlet var appSummaryLabel: UILabel!
     
     // PROPERTIES ---------------------------------------------------------------------------------
     
@@ -47,12 +48,21 @@ internal class AppDetailsController: UIViewController {
         if let model = model {
             appNameLabel.text = model.name
             appCategoryLabel.text = model.category!.label
+            appSummaryLabel.text = model.summary!
+            
+            ImagesHelper.applyIOSMask(appIconImageView)
             
             if let images = model.images {
                 let firstImageLink = (images[2] as! AppImage).link!
                 
                 HTTPResources.getImage(firstImageLink, by: {(imageData: NSData) in
                     self.appIconImageView.image = UIImage(data: imageData)
+                    
+                    UIView.animateWithDuration(1.5, delay: 0, options: .CurveEaseInOut, animations:
+                        { () -> Void in
+                            self.appIconImageView?.alpha = 1
+                        }) { (completed) -> Void in }
+                    
                     }, orFailWith: {(error: ErrorWrapper) in
                         
                 })

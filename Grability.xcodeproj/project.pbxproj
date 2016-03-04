@@ -58,6 +58,7 @@
 		2B75EADA1C89599400944F51 /* CategoriesCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAD91C89599400944F51 /* CategoriesCoordinatorDelegate.swift */; };
 		2B75EADC1C899A0A00944F51 /* AppDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EADB1C899A0A00944F51 /* AppDetailsController.swift */; };
 		2B75EADE1C899D9A00944F51 /* DetailsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EADD1C899D9A00944F51 /* DetailsDomain.swift */; };
+		2B75EAE01C8A028900944F51 /* ImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EADF1C8A028900944F51 /* ImagesHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		2B75EAD91C89599400944F51 /* CategoriesCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		2B75EADB1C899A0A00944F51 /* AppDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailsController.swift; sourceTree = "<group>"; };
 		2B75EADD1C899D9A00944F51 /* DetailsDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsDomain.swift; sourceTree = "<group>"; };
+		2B75EADF1C8A028900944F51 /* ImagesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +359,7 @@
 				2B75EAB71C86C3F100944F51 /* Log.swift */,
 				2B75EAC11C886F5E00944F51 /* HTTPResources.swift */,
 				2B75EAC71C88965A00944F51 /* SimplePopup.swift */,
+				2B75EADF1C8A028900944F51 /* ImagesHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				2B75EAD21C88C75600944F51 /* CategoriesCoordinator.swift in Sources */,
 				2B75EABE1C88023D00944F51 /* AppCollectionCell.swift in Sources */,
 				2B46B4341C841177007F1F3E /* Reachability.swift in Sources */,
+				2B75EAE01C8A028900944F51 /* ImagesHelper.swift in Sources */,
 				2B46B4281C83F10A007F1F3E /* AppsNetworker.swift in Sources */,
 				2B75EAD81C89595E00944F51 /* CategoriesDomain.swift in Sources */,
 				2B75EAC21C886F5E00944F51 /* HTTPResources.swift in Sources */,

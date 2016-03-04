@@ -278,47 +278,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-cA-2Z0">
-                                <rect key="frame" x="20" y="28" width="100" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-cA-2Z0">
+                                <rect key="frame" x="20" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="MYu-67-BoC"/>
                                     <constraint firstAttribute="width" secondItem="fdU-cA-2Z0" secondAttribute="height" multiplier="1:1" id="dVy-mv-D0X"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unD-gc-x7Y">
-                                <rect key="frame" x="128" y="71" width="460" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application name" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKD-Xe-iLi">
+                                <rect key="frame" x="128" y="84" width="460" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="s1U-WQ-Hmn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unD-gc-x7Y">
+                                <rect key="frame" x="128" y="127" width="460" height="13.5"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="11"/>
                                 <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Application name" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKD-Xe-iLi">
-                                <rect key="frame" x="128" y="28" width="460" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-mG-Lw2">
+                                <rect key="frame" x="20" y="180" width="560" height="115"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="s1U-WQ-Hmn"/>
+                                    <constraint firstAttribute="height" constant="115" id="sY2-Vx-WcO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas felis diam, non lobortis lacus euismod at. Aenean quis arcu euismod, mattis nulla et, semper erat. Donec elementum felis non eros pulvinar vestibulum. Nam dapibus felis et sapien efficitur imperdiet. Morbi feugiat ac leo vitae porttitor. Donec elementum vel nunc sed ultricies. Curabitur luctus, tellus sit amet lobortis blandit, lorem lacus luctus tellus, eu sollicitudin erat tellus vel ipsum. Vivamus et tellus eget est mollis luctus. Nam tincidunt leo sit amet condimentum lacinia. Suspendisse eleifend metus nec odio imperdiet, sed pharetra nibh laoreet. Proin euismod placerat erat, et gravida diam lacinia et. Sed faucibus luctus nulla, eu consectetur mauris fermentum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse rhoncus, neque pulvinar auctor posuere, nibh nunc faucibus metus, tincidunt cursus magna metus consequat enim. Donec at arcu varius justo efficitur vestibulum.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xKD-Xe-iLi" firstAttribute="trailing" secondItem="unD-gc-x7Y" secondAttribute="trailing" id="0Pc-VM-Mgf"/>
-                            <constraint firstItem="xKD-Xe-iLi" firstAttribute="top" secondItem="nrx-H6-iak" secondAttribute="bottom" constant="8" id="5eC-9g-umu"/>
+                            <constraint firstItem="xKD-Xe-iLi" firstAttribute="top" secondItem="nrx-H6-iak" secondAttribute="bottom" constant="20" id="5eC-9g-umu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xKD-Xe-iLi" secondAttribute="trailing" constant="-8" id="8HE-Qa-71y"/>
                             <constraint firstItem="fdU-cA-2Z0" firstAttribute="top" secondItem="nrx-H6-iak" secondAttribute="bottom" constant="8" symbolic="YES" id="JtQ-wY-CU9"/>
                             <constraint firstItem="xKD-Xe-iLi" firstAttribute="top" secondItem="fdU-cA-2Z0" secondAttribute="top" id="QPG-VH-0Mj"/>
+                            <constraint firstItem="Ixk-xv-97S" firstAttribute="top" secondItem="Zjc-mG-Lw2" secondAttribute="bottom" constant="305" id="Rua-1c-Qg1"/>
                             <constraint firstItem="fdU-cA-2Z0" firstAttribute="leading" secondItem="Nhw-xm-SKa" secondAttribute="leadingMargin" id="SdH-bg-uep"/>
                             <constraint firstItem="unD-gc-x7Y" firstAttribute="leading" secondItem="fdU-cA-2Z0" secondAttribute="trailing" constant="8" id="Zno-8V-UO5"/>
                             <constraint firstItem="unD-gc-x7Y" firstAttribute="leading" secondItem="fdU-cA-2Z0" secondAttribute="trailing" constant="8" symbolic="YES" id="h6c-2d-olr"/>
+                            <constraint firstItem="Zjc-mG-Lw2" firstAttribute="top" secondItem="fdU-cA-2Z0" secondAttribute="bottom" constant="8" symbolic="YES" id="kAe-YG-5iZ"/>
                             <constraint firstItem="unD-gc-x7Y" firstAttribute="top" secondItem="xKD-Xe-iLi" secondAttribute="bottom" constant="8" symbolic="YES" id="tyS-uD-ctk"/>
                             <constraint firstItem="xKD-Xe-iLi" firstAttribute="leading" secondItem="unD-gc-x7Y" secondAttribute="leading" id="woa-Sx-gCs"/>
                             <constraint firstItem="Ixk-xv-97S" firstAttribute="top" secondItem="fdU-cA-2Z0" secondAttribute="bottom" constant="412" id="x4Q-MC-zIu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zjc-mG-Lw2" secondAttribute="trailing" id="xb5-hG-aMg"/>
+                            <constraint firstItem="Zjc-mG-Lw2" firstAttribute="leading" secondItem="fdU-cA-2Z0" secondAttribute="leading" id="yuF-yc-pPI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="QPG-VH-0Mj"/>
                                 <exclude reference="h6c-2d-olr"/>
+                                <exclude reference="Rua-1c-Qg1"/>
                                 <exclude reference="x4Q-MC-zIu"/>
                             </mask>
                         </variation>
@@ -328,6 +343,7 @@
                         <outlet property="appCategoryLabel" destination="unD-gc-x7Y" id="zoL-5X-YBp"/>
                         <outlet property="appIconImageView" destination="fdU-cA-2Z0" id="9V0-dv-iHh"/>
                         <outlet property="appNameLabel" destination="xKD-Xe-iLi" id="kVL-sB-5e6"/>
+                        <outlet property="appSummaryLabel" destination="Zjc-mG-Lw2" id="Cp1-kl-6fE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="335-Fs-OCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
