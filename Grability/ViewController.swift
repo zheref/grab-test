@@ -102,7 +102,7 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
      * Start the data loading of the items to show
      */
     private func loadApps() {
-        _domain.getTopFreeApps(63, returner: {(apps: [App]) in
+        _domain.getApps(63, returner: {(apps: [App]) in
             self.appsDatasource.clear()
             
             for app in apps {
@@ -138,6 +138,23 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
             }) { (completed) -> Void in }
     }
     
+    private func changeTitleBasedOnVariation() {
+        var title: String = ""
+        
+        switch _domain.selectedVariation {
+        case .NewFreeApplications:
+            title = "New Free"
+        case .TopFreeApplications:
+            title = "Top Charts"
+        case .NewPaidApplications:
+            title = "New Paid"
+        default:
+            title = "Top Charts"
+        }
+        
+        changeNavigationTitle(to: title)
+    }
+    
     // ACTIONS ------------------------------------------------------------------------------------
     
     /**
@@ -152,6 +169,25 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
         default:
             SimplePopup.alert("Defaulting. Why is this even happening?", from: self)
         }
+    }
+    
+    /**
+     * Triggered when user switches the variation from the top segmented control
+     */
+    @IBAction func onVariationsSegmentedControlValueChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            _domain.selectedVariation = AppVariation.NewPaidApplications
+        case 1:
+            _domain.selectedVariation = AppVariation.TopFreeApplications
+        case 2:
+            _domain.selectedVariation = AppVariation.NewFreeApplications
+        default:
+            _domain.selectedVariation = AppVariation.TopFreeApplications
+        }
+        
+        changeTitleBasedOnVariation()
+        loadApps()
     }
     
     // UITOOLBARDELEGATE IMPLEMENTATION -----------------------------------------------------------
@@ -171,7 +207,7 @@ internal class ViewController: UIViewController, UICollectionViewDelegate, UIToo
             if category != nil {
                 changeNavigationTitle(to: category!.label!)
             } else {
-                changeNavigationTitle(to: "Top Charts")
+                changeTitleBasedOnVariation()
             }
             
             loadApps()

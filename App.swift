@@ -56,8 +56,12 @@ internal class App: NSManagedObject {
     }
     
     private static func getLabelForKey(key: String, fromJson json: JSON) -> String {
-        let jsonWrapper = json[key]!
-        return getLabel(jsonWrapper)
+        let jsonWrapper = json[key]
+        if let wrapper = jsonWrapper {
+            return getLabel(wrapper)
+        } else {
+            return ""
+        }
     }
     
     private static func getAttributeForKey(key: String, attribute attr: String,

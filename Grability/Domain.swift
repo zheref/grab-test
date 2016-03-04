@@ -36,6 +36,15 @@ internal class Domain {
         }
     }
     
+    private var _selectedVariation: AppVariation = AppVariation.TopFreeApplications
+    
+    internal var selectedVariation: AppVariation {
+        get { return _selectedVariation }
+        set (val) {
+            _selectedVariation = val
+        }
+    }
+    
     // INITIALIZERS -------------------------------------------------------------------------------
     
     /**
@@ -52,10 +61,10 @@ internal class Domain {
      * - Parameter amount: Amount of items to retrieve
      * - Parameter returner: Closure who will receive the async returned items
      */
-    internal func getTopFreeApps(amount: Int, returner: AppsAsyncReturner,
+    internal func getApps(amount: Int, returner: AppsAsyncReturner,
     thrower: ErrorAsyncThrower)
     {
-        appsCoordinator.get(AppVariation.TopFreeApplications, category: selectedCategory,
+        appsCoordinator.get(_selectedVariation, category: selectedCategory,
             amount: amount, returner: returner, thrower: thrower)
     }
     

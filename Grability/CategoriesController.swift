@@ -91,8 +91,10 @@ internal class CategoriesController: UITableViewController {
      * Loads the categories from the right source to be displayed on the TableView
      */
     private func loadCategories() {
+        
         _domain.getAll({(categories: [Category]) in
             if categories.count > 0 {
+                self._categories.removeAll()
                 self._categories = categories
             }
         }, thrower: {(error: ErrorWrapper) in
