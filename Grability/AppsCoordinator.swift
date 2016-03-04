@@ -49,19 +49,46 @@ internal final class AppsCoordinator : AppsCoordinatorDelegate {
     internal func get(variation: AppVariation, amount: Int, returner: AppsAsyncReturner,
     thrower: ErrorAsyncThrower) {
         let cacheKey = "apps:\(variation.rawValue):all"
-            
-        // TODO: Respond to network connectivity changes
-        if GrabilityNetworker.isNetworkAvailable {
-            AppsNetworker.shared.retrieve(variation, amount: amount, returner: {
-                (apps: [App]) in
-                AppsDatastore.shared.updateTopFree(apps, beingSupervisedBy: LogSupervisor())
-                returner(apps)
-            }, thrower: thrower)
+        
+        if Memcache.shared.hasKey(cacheKey) {
+            let apps = Memcache.shared[cacheKey]! as! [App]
+            returner(apps)
         } else {
-            AppsDatastore.shared.retrieveTopFree(amount, returner: returner)
+            // TODO: Respond to network connectivity changes
+            if GrabilityNetworker.isNetworkAvailable {
+                AppsNetworker.shared.retrieve(variation, amount: amount, returner: {(apps: [App]) in
+                    Memcache.shared.addOrUpdateKey(cacheKey, withData: apps)
+                    //AppsDatastore.shared.updateTopFree(apps, beingSupervisedBy: LogSupervisor())
+                    self.collectAndMemcacheCategories(apps)
+                    returner(apps)
+                }, thrower: thrower)
+            } else {
+                AppsDatastore.shared.retrieveTopFree(amount, returner: returner)
+            }
         }
     }
     
     // FUNCTIONS ----------------------------------------------------------------------------------
+    
+    /**
+     * Collect all the categories from the fetched apps and memcache them
+     */
+    private func collectAndMemcacheCategories(apps: [App]) {
+        var categories = [Category]()
+        
+        for app in apps {
+            if let categoryForApp = app.category {
+                if categories.contains(categoryForApp) {
+                    continue
+                } else {
+                    categories.append(categoryForApp)
+                }
+            } else {
+                continue
+            }
+        }
+        
+        CategoriesCoordinator.shared.memcacheCollectedCategories(categories)
+    }
     
 }

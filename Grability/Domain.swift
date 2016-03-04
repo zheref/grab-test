@@ -42,4 +42,13 @@ internal class Domain {
             returner: returner, thrower: thrower)
     }
     
+    /**
+     * Async return all the categories
+     * - Parameter returner: Async returner closure to deliver categories
+     * - Parameter thrower: Async error thrower closure to delegate error handlings
+     */
+    internal func getCategories(returner: CategoriesAsyncReturner, thrower: ErrorAsyncThrower) {
+        
+    }
+    
 }

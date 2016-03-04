@@ -11,7 +11,7 @@ import UIKit
 /**
  * Main view controller responsible of UI logic of main apps listing view
  */
-class ViewController: UIViewController, UIToolbarDelegate {
+internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSelectionDelegate {
     
     // OUTLETS ------------------------------------------------------------------------------------
 
@@ -45,6 +45,17 @@ class ViewController: UIViewController, UIToolbarDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    /**
+     * Middleware called just in the moment of the segue transition
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Segues.AppsToCategories {
+            if let controller = segue.destinationViewController as? CategoriesController {
+                controller.delegate = self
+            }
+        }
     }
 
     // FUNCTIONS ----------------------------------------------------------------------------------
@@ -123,6 +134,12 @@ class ViewController: UIViewController, UIToolbarDelegate {
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return UIBarPosition.TopAttached
+    }
+    
+    // CATEGORIESSELECTIONDELEGATE IMPLEMENTATION -------------------------------------------------
+    
+    func passValueBack(category: Category) {
+        
     }
 
 }

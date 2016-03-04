@@ -12,6 +12,22 @@ internal class Memcache {
     
     private typealias MemcacheCollection = [String: ([AnyObject], MemcacheObserver?)]
     
+    // SINGLETON ----------------------------------------------------------------------------------
+    
+    /**
+    * Unique Memcache singleton reference (lazy-loaded)
+    */
+    private static var _instance: Memcache = {
+        return Memcache()
+    }()
+    
+    /**
+     * Unique Memcache singleton accesor
+     */
+    internal static var shared: Memcache {
+        get { return Memcache._instance }
+    }
+    
     // PROPERTIES ---------------------------------------------------------------------------------
     
     private var _data: MemcacheCollection
@@ -42,7 +58,8 @@ internal class Memcache {
      * - Parameter dataItem [AnyObject]:
      */
     internal func addOrUpdateKey(cacheKey: String, withData dataItem: [AnyObject],
-    beingWatchedBy dataObserver: MemcacheObserver? = nil) {
+    beingWatchedBy dataObserver: MemcacheObserver? = nil)
+    {
         if _data[cacheKey] == nil {
             _data[cacheKey] = (dataItem, dataObserver)
         } else {
@@ -58,6 +75,13 @@ internal class Memcache {
                 }
             }
         }
+    }
+    
+    /**
+     * Determines whether a key has been already cached or not
+     */
+    internal func hasKey(cacheKey: String) -> Bool {
+        return _data[cacheKey] != nil
     }
     
 }

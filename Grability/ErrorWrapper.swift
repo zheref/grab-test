@@ -32,4 +32,12 @@ internal class ErrorWrapper {
         _error = error
     }
     
+    var readable: String {
+        if isNs {
+            return (_nsError?.localizedDescription)!
+        } else {
+            return _error.debugDescription
+        }
+    }
+    
 }
