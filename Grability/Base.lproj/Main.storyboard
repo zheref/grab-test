@@ -188,7 +188,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="eaW-kt-mOa">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="9Zm-WK-znK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="9Zm-WK-znK">
+                            <connections>
+                                <action selector="onCloseBarButtonItemAction:" destination="hQc-wQ-24J" id="Jbf-jO-Snl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7d-0B-5fo" userLabel="First Responder" sceneMemberID="firstResponder"/>

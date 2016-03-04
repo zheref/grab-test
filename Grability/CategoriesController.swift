@@ -105,11 +105,18 @@ internal class CategoriesController: UITableViewController {
      * category to filter with if it has been chosen by the user
      */
     private func close(withCategory category: Category? = nil) {
-        self.presentingViewController?.dismissViewControllerAnimated(false, completion: {() in
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {() in
             if let category = category {
                 self._delegate!.passValueBack(category)
             }
         });
     }
+    
+    // ACTIONS ------------------------------------------------------------------------------------
+    
+    @IBAction func onCloseBarButtonItemAction(sender: UIBarButtonItem) {
+        close()
+    }
+    
     
 }
