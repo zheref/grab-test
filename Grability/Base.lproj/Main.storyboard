@@ -154,18 +154,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmi-GP-oHC">
-                                            <rect key="frame" x="8" y="0.0" width="584" height="36"/>
+                                            <rect key="frame" x="18" y="4" width="574" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="LVV-Bm-FdE"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Lmi-GP-oHC" secondAttribute="bottom" constant="-0.5" id="9pa-Tx-Tud"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Lmi-GP-oHC" secondAttribute="bottom" id="9pa-Tx-Tud"/>
+                                        <constraint firstItem="Lmi-GP-oHC" firstAttribute="centerY" secondItem="XIf-ct-vgC" secondAttribute="centerY" id="Pyb-bM-xel"/>
                                         <constraint firstItem="Lmi-GP-oHC" firstAttribute="top" secondItem="XIf-ct-vgC" secondAttribute="top" id="dkl-GE-Vmh"/>
-                                        <constraint firstItem="Lmi-GP-oHC" firstAttribute="leading" secondItem="XIf-ct-vgC" secondAttribute="leadingMargin" id="fdZ-9R-mg1"/>
+                                        <constraint firstItem="Lmi-GP-oHC" firstAttribute="leading" secondItem="XIf-ct-vgC" secondAttribute="leadingMargin" constant="10" id="fdZ-9R-mg1"/>
                                         <constraint firstItem="Lmi-GP-oHC" firstAttribute="trailing" secondItem="XIf-ct-vgC" secondAttribute="trailingMargin" id="pmM-zW-VKP"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="9pa-Tx-Tud"/>
+                                            <exclude reference="dkl-GE-Vmh"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="categoryNameLabel" destination="Lmi-GP-oHC" id="ZRJ-fq-pxs"/>

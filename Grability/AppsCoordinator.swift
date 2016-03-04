@@ -51,8 +51,7 @@ internal final class AppsCoordinator : AppsCoordinatorDelegate {
         let cacheKey = "apps:\(variation.rawValue):all"
         
         if Memcache.shared.hasKey(cacheKey) {
-            let apps = Memcache.shared[cacheKey]! as! [App]
-            returner(apps)
+            returner(Memcache.shared[cacheKey]! as! [App])
         } else {
             // TODO: Respond to network connectivity changes
             if GrabilityNetworker.isNetworkAvailable {
@@ -78,7 +77,15 @@ internal final class AppsCoordinator : AppsCoordinatorDelegate {
         
         for app in apps {
             if let categoryForApp = app.category {
-                if categories.contains(categoryForApp) {
+                var existing = false
+                
+                for iteratedCategory in categories {
+                    if iteratedCategory.label == categoryForApp.label {
+                        existing = true
+                    }
+                }
+                
+                if existing {
                     continue
                 } else {
                     categories.append(categoryForApp)

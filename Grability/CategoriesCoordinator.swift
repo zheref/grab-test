@@ -49,8 +49,7 @@ internal class CategoriesCoordinator : CategoriesCoordinatorDelegate {
     */
     internal func get(returner: CategoriesAsyncReturner, thrower: ErrorAsyncThrower) {
         if Memcache.shared.hasKey(cacheKey) {
-            let categories = Memcache.shared[cacheKey]! as! [Category]
-            returner(categories)
+            returner(Memcache.shared[cacheKey]! as! [Category])
         } else {
             // TODO: Query the local Core Data DB
         }
