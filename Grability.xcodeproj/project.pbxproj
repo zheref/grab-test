@@ -45,7 +45,6 @@
 		2B75EABA1C87ABBD00944F51 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAB91C87ABBD00944F51 /* RootViewController.swift */; };
 		2B75EABC1C87FEFE00944F51 /* AppsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */; };
 		2B75EABE1C88023D00944F51 /* AppCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABD1C88023D00944F51 /* AppCollectionCell.swift */; };
-		2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EABF1C885B8300944F51 /* AppsDelegate.swift */; };
 		2B75EAC21C886F5E00944F51 /* HTTPResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC11C886F5E00944F51 /* HTTPResources.swift */; };
 		2B75EAC61C88951F00944F51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC51C88951F00944F51 /* Constants.swift */; };
 		2B75EAC81C88965A00944F51 /* SimplePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAC71C88965A00944F51 /* SimplePopup.swift */; };
@@ -57,6 +56,8 @@
 		2B75EAD61C89490300944F51 /* CategorySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAD51C89490300944F51 /* CategorySelectionDelegate.swift */; };
 		2B75EAD81C89595E00944F51 /* CategoriesDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAD71C89595E00944F51 /* CategoriesDomain.swift */; };
 		2B75EADA1C89599400944F51 /* CategoriesCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EAD91C89599400944F51 /* CategoriesCoordinatorDelegate.swift */; };
+		2B75EADC1C899A0A00944F51 /* AppDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EADB1C899A0A00944F51 /* AppDetailsController.swift */; };
+		2B75EADE1C899D9A00944F51 /* DetailsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75EADD1C899D9A00944F51 /* DetailsDomain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +122,6 @@
 		2B75EAB91C87ABBD00944F51 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2B75EABB1C87FEFE00944F51 /* AppsDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDatasource.swift; sourceTree = "<group>"; };
 		2B75EABD1C88023D00944F51 /* AppCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCollectionCell.swift; sourceTree = "<group>"; };
-		2B75EABF1C885B8300944F51 /* AppsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsDelegate.swift; sourceTree = "<group>"; };
 		2B75EAC11C886F5E00944F51 /* HTTPResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResources.swift; sourceTree = "<group>"; };
 		2B75EAC51C88951F00944F51 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B75EAC71C88965A00944F51 /* SimplePopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePopup.swift; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 		2B75EAD51C89490300944F51 /* CategorySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionDelegate.swift; sourceTree = "<group>"; };
 		2B75EAD71C89595E00944F51 /* CategoriesDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesDomain.swift; sourceTree = "<group>"; };
 		2B75EAD91C89599400944F51 /* CategoriesCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		2B75EADB1C899A0A00944F51 /* AppDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailsController.swift; sourceTree = "<group>"; };
+		2B75EADD1C899D9A00944F51 /* DetailsDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsDomain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +243,6 @@
 			children = (
 				2B46B43B1C841733007F1F3E /* LogSupervisor.swift */,
 				2B46B4431C842250007F1F3E /* LogErrorHandler.swift */,
-				2B75EABF1C885B8300944F51 /* AppsDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -252,6 +253,7 @@
 				2B18E59A1C7CB3C200449B15 /* ViewController.swift */,
 				2B75EAB91C87ABBD00944F51 /* RootViewController.swift */,
 				2B75EAC91C889C6D00944F51 /* CategoriesController.swift */,
+				2B75EADB1C899A0A00944F51 /* AppDetailsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +366,7 @@
 			children = (
 				2B75EAB31C86356D00944F51 /* Domain.swift */,
 				2B75EAD71C89595E00944F51 /* CategoriesDomain.swift */,
+				2B75EADD1C899D9A00944F51 /* DetailsDomain.swift */,
 			);
 			name = Domains;
 			sourceTree = "<group>";
@@ -509,7 +512,6 @@
 				2B46B42E1C840E04007F1F3E /* AppsCoordinator.swift in Sources */,
 				2B75EADA1C89599400944F51 /* CategoriesCoordinatorDelegate.swift in Sources */,
 				2B18E5991C7CB3C200449B15 /* AppDelegate.swift in Sources */,
-				2B75EAC01C885B8300944F51 /* AppsDelegate.swift in Sources */,
 				2B46B42B1C83F23C007F1F3E /* GrabilityNetworker.swift in Sources */,
 				2B75EAD21C88C75600944F51 /* CategoriesCoordinator.swift in Sources */,
 				2B75EABE1C88023D00944F51 /* AppCollectionCell.swift in Sources */,
@@ -532,6 +534,7 @@
 				2B75EAC61C88951F00944F51 /* Constants.swift in Sources */,
 				2B75EACA1C889C6D00944F51 /* CategoriesController.swift in Sources */,
 				2B75EAC81C88965A00944F51 /* SimplePopup.swift in Sources */,
+				2B75EADE1C899D9A00944F51 /* DetailsDomain.swift in Sources */,
 				2B46B4231C823218007F1F3E /* Category+CoreDataProperties.swift in Sources */,
 				2B46B4201C823218007F1F3E /* Artist.swift in Sources */,
 				2B46B43C1C841733007F1F3E /* LogSupervisor.swift in Sources */,
@@ -542,6 +545,7 @@
 				2B46B4241C823218007F1F3E /* Category.swift in Sources */,
 				2B75EACC1C889F9200944F51 /* Memcache.swift in Sources */,
 				2B75EAD61C89490300944F51 /* CategorySelectionDelegate.swift in Sources */,
+				2B75EADC1C899A0A00944F51 /* AppDetailsController.swift in Sources */,
 				2B75EACE1C889FCF00944F51 /* MemcacheObserver.swift in Sources */,
 				2B75EAB81C86C3F100944F51 /* Log.swift in Sources */,
 			);

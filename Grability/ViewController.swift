@@ -11,7 +11,7 @@ import UIKit
 /**
  * Main view controller responsible of UI logic of main apps listing view
  */
-internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSelectionDelegate {
+internal class ViewController: UIViewController, UICollectionViewDelegate, UIToolbarDelegate, CategoriesSelectionDelegate {
     
     private let LOG_TAG = "ViewController"
     
@@ -59,6 +59,10 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
                     controller.delegate = self
                 }
             }
+        } else if segue.identifier == Segues.AppToDetails {
+            if let controller = segue.destinationViewController as? AppDetailsController {
+                controller.model = _domain.lastTappedVar
+            }
         }
     }
 
@@ -79,8 +83,9 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
     private func configAppsCollectionView() {
         appsCollectionView.registerClass(AppCollectionCell.self,
             forCellWithReuseIdentifier: "groupcell")
+        
         appsCollectionView.dataSource = appsDatasource
-        appsCollectionView.delegate = AppsDelegate(action: self.onAppsTableViewSelectedItem)
+        appsCollectionView.delegate = self
     }
     
     /**
@@ -96,7 +101,7 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      * Start the data loading of the items to show
      */
     private func loadApps() {
-        _domain.getTopFreeApps(50, returner: {(apps: [App]) in
+        _domain.getTopFreeApps(63, returner: {(apps: [App]) in
             self.appsDatasource.clear()
             
             for app in apps {
@@ -139,7 +144,8 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
      * Triggered when user selects an app item on the TableView
      */
     private func onAppsTableViewSelectedItem(selectedIndex: Int) {
-        
+        _domain.lastTappedVar = appsDatasource[selectedIndex]
+        performSegueWithIdentifier(Segues.AppToDetails, sender: self)
     }
     
     // UITOOLBARDELEGATE IMPLEMENTATION -----------------------------------------------------------
@@ -164,6 +170,15 @@ internal class ViewController: UIViewController, UIToolbarDelegate, CategoriesSe
             
             loadApps()
         }
+    }
+    
+    // UICOLLECTIONVIEWDELEGATE  IMPLEMENTATION ---------------------------------------------------
+    
+    func collectionView(collectionView: UICollectionView,
+        didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        Log.debug("ViewController", print: "Entered didSelected")
+        self.onAppsTableViewSelectedItem(indexPath.row)
     }
 
 }

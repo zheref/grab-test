@@ -10,4 +10,5 @@ import Foundation
 
 internal class Segues {
     static let AppsToCategories = "AppsToCategoriesSegue"
+    static let AppToDetails = "AppToDetails"
 }

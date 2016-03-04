@@ -27,6 +27,15 @@ internal class Domain {
         }
     }
     
+    private var _lastTappedApp: App?
+    
+    internal var lastTappedVar: App? {
+        get { return _lastTappedApp }
+        set (val) {
+            _lastTappedApp = val
+        }
+    }
+    
     // INITIALIZERS -------------------------------------------------------------------------------
     
     /**

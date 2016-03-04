@@ -64,6 +64,14 @@ internal class AppsDatasource : NSObject, UICollectionViewDataSource {
         _apps.removeAll()
     }
     
+    // SUBSCRIPT ----------------------------------------------------------------------------------
+    
+    internal subscript(index: Int) -> App? {
+        get {
+            return _apps[index]
+        }
+    }
+    
     // IMPLEMENTATION -----------------------------------------------------------------------------
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

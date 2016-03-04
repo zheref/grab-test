@@ -48,6 +48,7 @@ internal class AppCollectionCell : UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse();
+        self.appIconImageView.image = nil
     }
     
 }
